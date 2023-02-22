@@ -1,0 +1,32 @@
+<!-- starts: header -->
+<header class="app-header d-flex p-3 mb-1">
+    <!-- starts:toggle menu -->
+    <button type="button" class="d-lg-none" (click)="toggleSidebar()">
+        <span class="icon icon-grid-menu "></span>
+    </button>
+    <figure class="app-logo d-flex align-items-center justify-content-center mb-0">
+        <img src="assets/images/1R-logo.png" alt="logo" />
+        <span class="px-3">|</span>
+        <figcaption><h5 class="mb-0">1Rivet</h5></figcaption>
+    </figure>
+    <div class="d-flex flex-grow-1 justify-content-between ps-3">
+        <form class="search-wrapper col-4">
+            <input type="text" placeholder="search here" class="form-control" />
+            <span></span>
+        </form>
+        <aside class="d-flex align-items-center">
+            <h4 class="pe-3 mb-0 text-capitalize">{{userDetails.name}} {{userDetails.lastName}}</h4>
+            <button type="button" class="btn btn-primary" routerLink="/tickets/add">Create Ticket</button>
+            <nav class="secondary-nav d-none">
+                <ul class="list-group">
+                    <li><a href="">User settings</a></li>
+                    <li><a href="">Log out</a> </li>
+                </ul>
+            </nav>
+            <div class="d-none">
+                dropdown
+            </div>
+        </aside>
+    </div>
+</header>
+<!-- ends: header -->

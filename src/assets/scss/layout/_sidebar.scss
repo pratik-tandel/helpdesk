@@ -1,0 +1,24 @@
+.app-sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background-color: $white;
+    position: relative;
+    z-index: 1051;
+    box-shadow: 1px 0px 5px 0 $gray-200;
+}
+
+.primary-nav {
+    &-list {
+        margin-bottom: 3rem;
+    }
+    &-link{
+        padding: 10px 20px;
+        text-transform: capitalize;
+        font-size: $font-size-base * 1;
+        color: $primary;
+        text-decoration: none;
+    }
+}
+.show-sidebar{
+    display: flex !important;
+}

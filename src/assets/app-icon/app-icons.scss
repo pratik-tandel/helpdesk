@@ -1,0 +1,470 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "my-app-icon";
+  src: url("../app-icon/fonts/app-icons.eot?58undb");
+  src: url("../app-icon/fonts/app-icons.eot?58undb#iefix") format("embedded-opentype"),
+    url("../app-icon/fonts/app-icons.ttf?58undb") format("truetype"),
+    url("../app-icon/fonts/app-icons.woff?58undb") format("woff"),
+    url("../app-icon/fonts/app-icons.svg?58undb#app-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "my-app-icon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  .icon-csv:before {
+    content: "\e955";
+  }
+  .icon-move:before {
+    content: "\e90a";
+  }
+  .icon-note:before {
+    content: "\e906";
+  }
+  .icon-flag:before {
+    content: "\e907";
+  }
+  .icon-lock-note:before {
+    content: "\e908";
+  }
+  .icon-chats:before {
+    content: "\e909";
+  }
+  .icon-view-authorization:before {
+    content: "\e904";
+  }
+  .icon-manage-authorization-users:before {
+    content: "\e905";
+  }
+  .icon-customer-support-fill:before {
+    content: "\e9f3";
+  }
+  .icon-customer-support:before {
+    content: "\e9f4";
+  }
+  .icon-Info-fill:before {
+    content: "\e9f5";
+  }
+  .icon-Info:before {
+    content: "\e9f6";
+  }
+  .icon-mobile:before {
+    content: "\e9d9";
+  }
+  .icon-linkedin-2:before {
+    content: "\e9f1";
+  }
+  .icon-linkedin-1:before {
+    content: "\e9f2";
+  }
+  .icon-community-data:before {
+    content: "\e9eb";
+  }
+  .icon-hourglass-check:before {
+    content: "\e9ec";
+  }
+  .icon-hourglass-uncheck:before {
+    content: "\e9ed";
+  }
+  .icon-relocation-checklist:before {
+    content: "\e9ee";
+  }
+  .icon-school-search:before {
+    content: "\e9ef";
+  }
+  .icon-view:before {
+    content: "\e9f0";
+  }
+  .icon-expense-tracking:before {
+    content: "\e9e8";
+  }
+  .icon-transferee-services:before {
+    content: "\e9e9";
+  }
+  .icon-needs-form:before {
+    content: "\e9ea";
+  }
+  .icon-checklist-2:before {
+    content: "\e9e5";
+  }
+  .icon-checklist-1:before {
+    content: "\e9e6";
+  }
+  .icon-checklist-3:before {
+    content: "\e9e7";
+  }
+  .icon-add-new-services:before {
+    content: "\e9d7";
+  }
+  .icon-admin-overview:before {
+    content: "\e9d8";
+  }
+  .icon-error-log:before {
+    content: "\e9da";
+  }
+  .icon-manage-client:before {
+    content: "\e9db";
+  }
+  .icon-manage-cost-estimate:before {
+    content: "\e9dc";
+  }
+  .icon-manage-email-logs:before {
+    content: "\e9dd";
+  }
+  .icon-manage-message-Board:before {
+    content: "\e9de";
+  }
+  .icon-manage-product-types:before {
+    content: "\e9df";
+  }
+  .icon-manage-program-name:before {
+    content: "\e9e0";
+  }
+  .icon-manage-user:before {
+    content: "\e9e1";
+  }
+  .icon-search-cost-estimate:before {
+    content: "\e9d4";
+  }
+  .icon-calculate-cost-estimate-1:before {
+    content: "\e9d5";
+  }
+  .icon-power-bi:before {
+    content: "\e9d6";
+  }
+  .icon-upload-file:before {
+    content: "\e9d1";
+  }
+  .icon-calendar-2:before {
+    content: "\e9d2";
+  }
+  .icon-calendar-1:before {
+    content: "\e9d3";
+  }
+  .icon-sorting-up:before {
+    content: "\e9c8";
+  }
+  .icon-sorting:before {
+    content: "\e9c9";
+  }
+  .icon-toggle:before {
+    content: "\e9ca";
+  }
+  .icon-xls:before {
+    content: "\e9cb";
+  }
+  .icon-download:before {
+    content: "\e9cc";
+  }
+  .icon-filter:before {
+    content: "\e9cd";
+  }
+  .icon-grid-menu:before {
+    content: "\e9ce";
+  }
+  .icon-pdf:before {
+    content: "\e9cf";
+  }
+  .icon-sorting-down:before {
+    content: "\e9d0";
+  }
+  .icon-arrow-left:before {
+    content: "\e9c7";
+  }
+  .icon-arrow:before {
+    content: "\e9c6";
+  }
+  .icon-add:before {
+    content: "\e93d";
+  }
+  .icon-calendar:before {
+    content: "\e93e";
+  }
+  .icon-cancel:before {
+    content: "\e93f";
+  }
+  .icon-change-password:before {
+    content: "\e940";
+  }
+  .icon-chat:before {
+    content: "\e941";
+  }
+  .icon-check-list:before {
+    content: "\e942";
+  }
+  .icon-check:before {
+    content: "\e943";
+  }
+  .icon-down-arrow:before {
+    content: "\e944";
+  }
+  .icon-edit-check-list:before {
+    content: "\e945";
+  }
+  .icon-edit:before {
+    content: "\e946";
+  }
+  .icon-left-arrow:before {
+    content: "\e947";
+  }
+  .icon-logout:before {
+    content: "\e948";
+  }
+  .icon-look-up-transferee:before {
+    content: "\e949";
+  }
+  .icon-my-account:before {
+    content: "\e94a";
+  }
+  .icon-reset:before {
+    content: "\e94b";
+  }
+  .icon-right-arrow:before {
+    content: "\e94c";
+  }
+  .icon-save:before {
+    content: "\e94d";
+  }
+  .icon-search:before {
+    content: "\e94e";
+  }
+  .icon-submit:before {
+    content: "\e94f";
+  }
+  .icon-subtract:before {
+    content: "\e950";
+  }
+  .icon-tile:before {
+    content: "\e951";
+  }
+  .icon-up-arrow:before {
+    content: "\e952";
+  }
+  .icon-view-detail:before {
+    content: "\e953";
+  }
+  .icon-warning:before {
+    content: "\e954";
+  }
+  .icon-active-assignments-by-host-country:before {
+    content: "\e9b9";
+  }
+  .icon-assignment-ends:before {
+    content: "\e9ba";
+  }
+  .icon-assignment-starts:before {
+    content: "\e9bb";
+  }
+  .icon-month-to-date:before {
+    content: "\e9bc";
+  }
+  .icon-expense-reports:before {
+    content: "\e9bd";
+  }
+  .icon-faq:before {
+    content: "\e9be";
+  }
+  .icon-man:before {
+    content: "\e9bf";
+  }
+  .icon-tools-resources:before {
+    content: "\e9c2";
+  }
+  .icon-upcoming-assignment-end-dates:before {
+    content: "\e9c3";
+  }
+  .icon-upcoming-visa-expiration-dates:before {
+    content: "\e9c4";
+  }
+  .icon-us-outbound:before {
+    content: "\e9c5";
+  }
+  .icon-active-moves:before {
+    content: "\e900";
+  }
+  .icon-authorized-moves:before {
+    content: "\e901";
+  }
+  .icon-average-spend-per-transferee:before {
+    content: "\e902";
+  }
+  .icon-calculators:before {
+    content: "\e903";
+  }
+  .icon-client-reports:before {
+    content: "\e90b";
+  }
+  .icon-community-explorer:before {
+    content: "\e90c";
+  }
+  .icon-community-explorer-1:before {
+    content: "\e90d";
+  }
+  .icon-completed-moves:before {
+    content: "\e90e";
+  }
+  .icon-dashboard:before {
+    content: "\e90f";
+  }
+  .icon-delete:before {
+    content: "\e910";
+  }
+  .icon-delivery-van:before {
+    content: "\e911";
+  }
+  .icon-documents:before {
+    content: "\e912";
+  }
+  .icon-dollar:before {
+    content: "\e913";
+  }
+  .icon-employee-service-setisfaction:before {
+    content: "\e914";
+  }
+  .icon-enrollments:before {
+    content: "\e915";
+  }
+  .icon-error-logs:before {
+    content: "\e916";
+  }
+  .icon-global-resource-center:before {
+    content: "\e917";
+  }
+  .icon-global-visa-requirements:before {
+    content: "\e918";
+  }
+  .icon-manage-cost-estimates:before {
+    content: "\e919";
+  }
+  .icon-manage-email-log:before {
+    content: "\e91a";
+  }
+  .icon-manage-product-type:before {
+    content: "\e91b";
+  }
+  .icon-manage-program-names:before {
+    content: "\e91c";
+  }
+  .icon-manage-users:before {
+    content: "\e91d";
+  }
+  .icon-marketplace:before {
+    content: "\e91e";
+  }
+  .icon-message-board:before {
+    content: "\e91f";
+  }
+  .icon-mortgage-assistance:before {
+    content: "\e920";
+  }
+  .icon-mortgage-discount:before {
+    content: "\e921";
+  }
+  .icon-mortgage-loan-appliction:before {
+    content: "\e922";
+  }
+  .icon-moving-quote:before {
+    content: "\e923";
+  }
+  .icon-my-accounts:before {
+    content: "\e924";
+  }
+  .icon-new-authorization:before {
+    content: "\e925";
+  }
+  .icon-new-messages:before {
+    content: "\e926";
+  }
+  .icon-noun_writing:before {
+    content: "\e927";
+  }
+  .icon-online-user-guide:before {
+    content: "\e928";
+  }
+  .icon-overview:before {
+    content: "\e929";
+  }
+  .icon-payroll:before {
+    content: "\e92a";
+  }
+  .icon-people-search:before {
+    content: "\e92b";
+  }
+  .icon-please-configure-budget:before {
+    content: "\e92c";
+  }
+  .icon-print-document:before {
+    content: "\e92d";
+  }
+  .icon-pulse-check:before {
+    content: "\e92e";
+  }
+  .icon-real-estate-services:before {
+    content: "\e92f";
+  }
+  .icon-relocations:before {
+    content: "\e930";
+  }
+  .icon-rental-assistance-US:before {
+    content: "\e931";
+  }
+  .icon-rental-search:before {
+    content: "\e932";
+  }
+  .icon-reports:before {
+    content: "\e933";
+  }
+  .icon-settings:before {
+    content: "\e934";
+  }
+  .icon-spend-by-policy:before {
+    content: "\e935";
+  }
+  .icon-temp-accommodations:before {
+    content: "\e936";
+  }
+  .icon-total-spend:before {
+    content: "\e937";
+  }
+  .icon-transferee-authorization:before {
+    content: "\e938";
+  }
+  .icon-usa:before {
+    content: "\e939";
+  }
+  .icon-utility-connection:before {
+    content: "\e93a";
+  }
+  .icon-view-details:before {
+    content: "\e93b";
+  }
+  .icon-world:before {
+    content: "\e93c";
+  }
+  .icon-phone:before {
+    content: "\e9e2";
+  }
+  .icon-location:before {
+    content: "\e9e3";
+  }
+  .icon-email:before {
+    content: "\e9e4";
+  }
+  .icon-abstrict:before {
+    content: "\eae9";
+  }
+  

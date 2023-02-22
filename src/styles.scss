@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+//  app-icons
+@import './assets/app-icon/app-icons.scss';
+
+ //  app base file
+@import './assets/scss/base/index';
+
+ //  Bootstrap Functions, Variables, Mixins
+ @import './assets/scss/vendors/bootstrap_base.scss';
+
+ // Bootstrap components
+ @import './assets/scss/vendors/bootstrap-component';
+
+//  app specific layout
+@import './assets/scss/layout/index';
+
+//  app specific utilities
+@import './assets/scss/utilities/index';
+
+// regular style toast
+@import 'ngx-toastr/toastr';

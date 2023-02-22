@@ -1,0 +1,14 @@
+.hover-box{
+    &:hover{
+        .show-hover_box{
+            opacity: 1;
+            visibility:visible;
+            width: auto;
+        }
+    }
+    .show-hover_box{
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+    }
+}

@@ -1,0 +1,99 @@
+<section class="container h-100 overflow-auto d-flex flex-column py-4">
+    <a class="px-4" routerLink="/login">Go to Login</a>
+    <section class="d-flex border m-4 rounded">
+        <!-- starts:  registration form -->
+        <form class="overflow-auto p-3 col-md-6 col-12" [formGroup]="registrationForm">
+            <header class="text-secondary pb-3 mb-3 border-bottom">
+                <h2 class="mb-0">Registration</h2>
+            </header>
+            <div class="form-group mb-4">
+                <label for="name">Name</label>
+                <input formControlName="name" type="text" class="form-control" id="name" placeholder="Enter name" />
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['name'].errors?.['required'] && formControls['name'].touched">
+                    Name is required.
+                </div>
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['name'].errors?.['minlength'] && formControls['name'].touched">
+                    Name must be more than 3 characters.
+                </div>
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['name'].errors?.['cannotContainSpace'] && formControls['name'].touched">
+                    Name cannot contain space.
+                </div>
+
+            </div>
+            <div class="form-group mb-4">
+                <label for="lastName">Last name</label>
+                <input formControlName="lastName" type="text" class="form-control" id="lastName"
+                    placeholder="Enter name" />
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['lastName'].errors?.['required'] && formControls['lastName'].touched">
+                    Last name is required.
+                </div>
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['lastName'].errors?.['cannotContainSpace'] && formControls['lastName'].touched">
+                    Last name cannot contain space.
+                </div>
+
+            </div>
+            <div class="form-group mb-4">
+                <label for="userName">UserName/Email</label>
+                <input formControlName="userName" type="userName" class="form-control" id="userName"
+                    placeholder="Enter userName" />
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['userName'].errors?.['required'] && formControls['userName'].touched">
+                    UserName is required.
+                </div>
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['userName'].errors?.['pattern'] && formControls['userName'].touched">
+                    Please enter valid UserName.
+                </div>
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['userName'].errors?.['userNameAlreadyExist'] && formControls['userName'].touched">
+                    Username already exist.
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <label for="password">Password</label>
+                <input formControlName="password" type="password" class="form-control" id="password"
+                    placeholder="Password" />
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['password'].errors?.['required'] && formControls['password'].touched">
+                    Password is required.
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <label for="confirmPassword">Confirm Password</label>
+                <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword"
+                    placeholder="Enter confirm password" />
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['confirmPassword'].errors?.['required'] && formControls['confirmPassword'].touched">
+                    ConfirmPassword is required.
+                </div>
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['confirmPassword'].errors?.['notEquivalent'] && formControls['confirmPassword'].touched">
+                    Password is not match.
+                </div>
+            </div>
+            <footer>
+                <button (click)="addRegisteredEmployee()" type="submit"
+                    class="btn btn-primary text-uppercase px-4">Submit</button>
+            </footer>
+        </form>
+        <!-- ends: form -->
+        <figure class="d-md-block d-none col-6 bg-gray-500 mb-0 rounded-end">
+            <img src="../../../../../../../assets/images/helpdesk.png" alt="">
+        </figure>
+    </section>
+
+    <!-- Display employee details -->
+    <article class="d-flex flex-wrap px-4 pt-4 border-top">
+        <div *ngFor="let employee of employeeList" class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="border rounded p-3 m-1">
+                <h5>{{employee.name}} {{employee.lastName}}</h5>
+                <span>{{employee.userName}}</span>
+            </div>
+        </div>
+    </article>
+</section>

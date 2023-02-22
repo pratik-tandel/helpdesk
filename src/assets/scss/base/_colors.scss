@@ -1,0 +1,39 @@
+// theme color
+$primary  : #99CC00; // Primary color
+$secondary: #4c4d4c; //Secondary color
+
+$warning: #f2da32;
+$danger : #e24444;
+$success: #75f4a2;
+$info   : #3c3cdd;
+
+//gray shadow2
+$gray-100: #f0f2f4;
+$gray-200: #c6c9cb;
+$gray-300: #939698;
+$gray-400: #777a7b;
+$gray-500: #f9f7f7;
+
+// theme color array
+$theme-colors: (
+    "primary"  : $primary,
+    "secondary": $secondary,
+    "gray-100" : $gray-100,
+    "gray-200" : $gray-200,
+    "gray-300" : $gray-300,
+    "gray-400" : $gray-400,
+    "gray-500" : $gray-500,
+    "warning"  : $warning,
+    "danger"   : $danger,
+    "success"  : $success,
+    "info"     : $info
+);
+
+//border-color
+$border-color: $gray-200;
+
+//form control border color
+$input-border-color: $gray-200;
+
+//form control place holder color
+$input-placeholder-color: $gray-300;
