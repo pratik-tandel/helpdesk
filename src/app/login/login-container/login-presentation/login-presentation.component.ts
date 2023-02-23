@@ -13,28 +13,12 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class LoginPresentationComponent {
 
-  @Input() public set registeredUser(loginDetails) {
-
-    if (loginDetails) {
-      console.log("adaptertest:", loginDetails)
-      this._registeredUser = loginDetails;
-    }
-  }
-
   @Output() loginEmployee: EventEmitter<LoginEmployees>;
 
-  public get registeredUser(): any {
-    return this._registeredUser;
-  }
   public loginForm: any;
 
-  private _registeredUser: any;
-
   constructor(
-    private _loginPresenterService: LoginPresenterService,
-    private _toastr: ToastrService,
-    private _router: Router,
-    private _authService: AuthService
+    private _loginPresenterService: LoginPresenterService
   ) {
     this.loginForm = this._loginPresenterService.bindform();
     this.loginEmployee = new EventEmitter();
@@ -53,13 +37,6 @@ export class LoginPresentationComponent {
 
   /** Login registered employee */
   login() {
-    let result = this._loginPresenterService.loginUsers(this.loginForm, this.registeredUser);
-    if (result === -1) {
-      this._toastr.error('Username and password is wrong');
-    } else {
-      this._authService.setUserDetails(this.registeredUser[result])
-      this._router.navigate(['/'])
-    }
-    this.loginForm.reset();
+    this._loginPresenterService.loginUsers(this.loginForm);
   }
 }

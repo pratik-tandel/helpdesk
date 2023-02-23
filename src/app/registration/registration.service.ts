@@ -13,9 +13,9 @@ export class RegistrationService {
   addRegisterEmployee(formBody: Employee) {
     return this.http.post<Employee>(this.URL, formBody);
   }
-  
+
   /**Get registration employee details */
-     getRegisteredEmployees(){
-      return this.http.get<Employee[]>(this.URL);
-     }
+  getRegisteredEmployees() {
+    return this.http.get<Employee[]>(this.URL);
+  }
 }

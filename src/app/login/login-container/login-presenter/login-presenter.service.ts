@@ -23,12 +23,9 @@ export class LoginPresenterService {
   }
 
   /**Checked username and password */
-  public loginUsers(loginForm: FormGroup, loginList: any): number {
+  public loginUsers(loginForm: FormGroup) {
     if (loginForm.valid) {
       this.verifiedForm.next(loginForm.value);
-      let result = loginList.findIndex((res: any) => loginForm.value.userName === res.userName && loginForm.value.password === res.password);
-      return result;
     }
-    return -1;
   }
 }
