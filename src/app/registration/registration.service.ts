@@ -15,7 +15,7 @@ export class RegistrationService {
   }
   
   /**Get registration employee details */
-     getRegisteredEmployee(){
-      return this.http.get<Employee>(this.URL);
+     getRegisteredEmployees(){
+      return this.http.get<Employee[]>(this.URL);
      }
 }

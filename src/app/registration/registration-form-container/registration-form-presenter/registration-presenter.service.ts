@@ -11,8 +11,7 @@ export class RegistrationFormPresenterService {
   public verifiedForm: Subject<any>
 
   constructor(
-    private _formBuilder: FormBuilder,
-    private _toastr:ToastrService
+    private _formBuilder: FormBuilder
   ) {
     this.verifiedForm = new Subject();
     this.verifiedForm$ = this.verifiedForm.asObservable(); /* stored subject variable to asObservable */
@@ -20,7 +19,7 @@ export class RegistrationFormPresenterService {
   }
 
   /**apply validation */
-  bindform(existingUserNames: string[]) {
+  bindForm() {
     return this._formBuilder.group(
       {
         name: ['', [Validators.required,
@@ -31,7 +30,7 @@ export class RegistrationFormPresenterService {
         userName: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z0-9.-]{2,}[.]{1}[a-zA-Z]{2,}')]],
         password: ['', Validators.required],
         confirmPassword: ['', Validators.required]
-      }, { validator: [CustomFormValidator.checkIfMatchingPasswords('password', 'confirmPassword'),CustomFormValidator.userNameAlreadyExist('userName', existingUserNames)]}
+      }, { validator: CustomFormValidator.checkIfMatchingPasswords('password', 'confirmPassword') }
     )
   }
 
@@ -39,7 +38,6 @@ export class RegistrationFormPresenterService {
   public registrationFormData(registrationForm: FormGroup) {
     if (registrationForm.valid) {
       this.verifiedForm.next(registrationForm.value);
-      this._toastr.success('Employee registered successfully');
     }
   }
 }

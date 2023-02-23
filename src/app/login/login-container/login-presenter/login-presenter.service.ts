@@ -26,9 +26,7 @@ export class LoginPresenterService {
   public loginUsers(loginForm: FormGroup, loginList: any): number {
     if (loginForm.valid) {
       this.verifiedForm.next(loginForm.value);
-      console.log("loginlist", loginList)
       let result = loginList.findIndex((res: any) => loginForm.value.userName === res.userName && loginForm.value.password === res.password);
-      console.log("result", result)
       return result;
     }
     return -1;

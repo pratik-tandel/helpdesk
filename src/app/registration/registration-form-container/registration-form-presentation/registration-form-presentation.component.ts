@@ -15,8 +15,7 @@ export class RegistrationFormPresentationComponent {
   @Input() public set employeeList(employeeDetails: any) {
     if (employeeDetails) {
       this._employeeList = employeeDetails;
-      let existingUserNames = employeeDetails.map((item: any) => item.userName);
-      this.registrationForm = this._registrationPresenterService.bindform(existingUserNames);
+      this.registrationForm = this._registrationPresenterService.bindForm();
     }
   }
 
@@ -33,7 +32,7 @@ export class RegistrationFormPresentationComponent {
   /** inject the services into constructor */
   constructor(private _registrationPresenterService: RegistrationFormPresenterService) {
     /** initializing the variables */
-    this.registrationForm = this._registrationPresenterService.bindform(this.employeeList);
+    this.registrationForm = this._registrationPresenterService.bindForm();
     this.addRegistrationFormData = new EventEmitter();
   }
 
@@ -50,6 +49,5 @@ export class RegistrationFormPresentationComponent {
   /** add registered employee */
   addRegisteredEmployee() {
     this._registrationPresenterService.registrationFormData(this.registrationForm);
-    this.registrationForm.reset(); /** reset the form */
   }
 }

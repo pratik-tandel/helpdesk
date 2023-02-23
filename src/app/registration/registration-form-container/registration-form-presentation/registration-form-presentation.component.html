@@ -49,10 +49,6 @@
                     *ngIf="formControls['userName'].errors?.['pattern'] && formControls['userName'].touched">
                     Please enter valid UserName.
                 </div>
-                <div class="invalid-feedback d-flex"
-                    *ngIf="formControls['userName'].errors?.['userNameAlreadyExist'] && formControls['userName'].touched">
-                    Username already exist.
-                </div>
             </div>
             <div class="form-group mb-4">
                 <label for="password">Password</label>
@@ -86,14 +82,4 @@
             <img src="../../../../../../../assets/images/helpdesk.png" alt="">
         </figure>
     </section>
-
-    <!-- Display employee details -->
-    <article class="d-flex flex-wrap px-4 pt-4 border-top">
-        <div *ngFor="let employee of employeeList" class="col-lg-3 col-md-4 col-sm-6 col-12">
-            <div class="border rounded p-3 m-1">
-                <h5>{{employee.name}} {{employee.lastName}}</h5>
-                <span>{{employee.userName}}</span>
-            </div>
-        </div>
-    </article>
 </section>
