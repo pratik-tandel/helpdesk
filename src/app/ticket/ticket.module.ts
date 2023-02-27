@@ -8,6 +8,7 @@ import { TicketListContainerComponent } from './ticket-list-container/ticket-lis
 import { TicketListPresentationComponent } from './ticket-list-container/ticket-list-presentation/ticket-list-presentation.component';
 import { TicketComponent } from './ticket.component';
 import { TicketService } from './ticket.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { TicketService } from './ticket.service';
   ],
   imports: [
     CommonModule,
-    TicketRoutingModule
+    TicketRoutingModule,
+    HttpClientModule
   ],
   providers:[
     TicketService

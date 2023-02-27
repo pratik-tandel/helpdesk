@@ -17,35 +17,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="text-primary">closed</td>
-                <td>need vpn connection.</td>
-                <td>tanvi patel</td>
-                <td>neel pardeshi</td>
-                <td>office admin.</td>
-                <td>00125</td>
-                <td>1month ago.</td>
-                <td>edit | Delete</td>
-            </tr>
-            <tr>
-                <td class="text-info">in progress</td>
-                <td>install node js.</td>
-                <td>tanvi patel</td>
-                <td>neel pardeshi</td>
-                <td>office admin.</td>
-                <td>00124</td>
-                <td>1month ago.</td>
-                <td>edit | Delete</td>
-            </tr>
-            <tr>
-                <td class="text-warning">Pendding</td>
-                <td>install fileZilla.</td>
-                <td>tanvi patel</td>
-                <td>neel pardeshi</td>
-                <td>office admin.</td>
-                <td>00123</td>
-                <td>1month ago.</td>
-                <td>edit | Delete</td>
+            <tr *ngFor="let ticket of ticketList">
+                <td class="text-primary">{{ticket.status}}</td>
+                <td>{{ticket.subject}}</td>
+                <td>{{ticket.raisedBy}}</td>
+                <td>{{ticket.assignee}}</td>
+                <td>{{ticket.category}}</td>
+                <td>{{ticket.ticketId}}</td>
+                <td>{{ticket.updated}}</td>
+                <td>
+                    <button class="btn btn-info mx-2">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>
