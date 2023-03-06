@@ -19,12 +19,12 @@
         <tbody>
             <tr *ngFor="let ticket of ticketList">
                 <td class="text-primary">{{ticket.status}}</td>
-                <td>{{ticket.subject}}</td>
-                <td>{{ticket.raisedBy}}</td>
-                <td>{{ticket.assignee}}</td>
-                <td>{{ticket.category}}</td>
-                <td>{{ticket.ticketId}}</td>
-                <td>{{ticket.updated}}</td>
+                <td>{{ticket?.subject}}</td>
+                <td>{{ticket?.raisedBy}}</td>
+                <td>{{ticket?.assignee}}</td>
+                <td>{{ticket?.category}}</td>
+                <td>{{ticket?.id}}</td>
+                <td>{{ticket?.updated}}</td>
                 <td>
                     <button class="btn btn-info mx-2">Edit</button>
                     <button class="btn btn-danger">Delete</button>

@@ -25,15 +25,5 @@
       "id": 3
     }
   ],
-  "tickets": [
-    {
-      "ticketId": "1",
-      "status": "In Progress",
-      "subject": "Install Nodejs",
-      "raisedBy": "Pratik Tandel",
-      "assignee": "Neel Pardeshi",
-      "category": "Infrastructure",
-      "updated": "1 week ago"
-    }
-  ]
+  "tickets": []
 }

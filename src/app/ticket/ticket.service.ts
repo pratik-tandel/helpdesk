@@ -13,4 +13,8 @@ export class TicketService {
   getTickets(): Observable<Ticket[]> {
     return this._http.get<Ticket[]>(this.url);
   }
+
+  addTicket(ticket: Ticket) {
+    return this._http.post<Ticket>(this.url, ticket);
+  }
 }

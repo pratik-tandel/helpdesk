@@ -29,6 +29,5 @@ export class HeaderComponent {
   /*display employee name */
   ngOnInit(): void {
     this.employeeName = this._route.snapshot.queryParams?.['employeeId'];
-    console.log("employeename",this.employeeName)
   }
 }

@@ -1,1 +1,58 @@
-<p>ticket-form-presentation works!</p>
+<section class="container h-100 overflow-auto d-flex flex-column
+    align-items-center justify-content-center py-4">
+    <section class="col-xl-6 col-lg-6 col-md-7 col-sm-9 col-11
+        py-4">
+        <h2 class="text-center">Create a New Ticket</h2>
+        <!-- starts:  Ticket form -->
+        <form class="overflow-auto px-4" [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-4">
+                <label for="category">Category*</label>
+                <input formControlName="category" type="text"
+                    class="form-control" id="category"
+                    placeholder="Enter category" />
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['category'].errors?.['required'] &&
+                    formControls['category'].touched">
+                    Category is required.
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <label for="subject">Subject*</label>
+                <input formControlName="subject" type="text"
+                    class="form-control" id="subject"
+                    placeholder="Enter subject" />
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['subject'].errors?.['required'] &&
+                    formControls['subject'].touched">
+                    Subject is required.
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <label for="message">Message*</label>
+                <textarea formControlName="message" class="form-control"
+                    id="message"></textarea>
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['message'].errors?.['required'] &&
+                    formControls['message'].touched">
+                    Message is required.
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <label for="priority">Priority*</label>
+                <input formControlName="priority" type="text"
+                    class="form-control" id="priority"
+                    placeholder="Enter priority " />                     
+                <div class="invalid-feedback d-flex"
+                    *ngIf="formControls['priority'].errors?.['required'] &&
+                    formControls['priority'].touched">
+                    Priority is required.
+                </div>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Create Ticket</button>
+                <button type="button" class="btn btn-outline-dark mx-2">Cancel</button>
+            </div>
+        </form>
+        <!-- ends: form -->
+    </section>
+</section>

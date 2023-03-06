@@ -9,6 +9,7 @@ import { TicketListPresentationComponent } from './ticket-list-container/ticket-
 import { TicketComponent } from './ticket.component';
 import { TicketService } from './ticket.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     TicketRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers:[
     TicketService

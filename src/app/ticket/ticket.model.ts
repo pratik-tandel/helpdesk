@@ -1,6 +1,6 @@
 export class Ticket {
     constructor(
-        public ticketId: number,
+        public id: number,
         public status: string,
         public subject: string,
         public raisedBy: string,
