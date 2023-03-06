@@ -24,8 +24,8 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
-      positionClass: 'toast-top-left',
+      timeOut: 4000,
+      positionClass: 'toast-top-right',
     }),
   ],
   providers: [],

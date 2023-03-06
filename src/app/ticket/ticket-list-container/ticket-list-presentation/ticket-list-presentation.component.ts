@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Ticket } from '../../ticket.model';
 
 @Component({
@@ -16,5 +16,15 @@ export class TicketListPresentationComponent {
     return this._ticketList;
   }
 
+  @Output() public deleteTicket: EventEmitter<number>;
+
   private _ticketList!: Ticket[] | null;
+
+  constructor() {
+    this.deleteTicket = new EventEmitter();
+  }
+
+  onDelete(ticketId: number) {
+    this.deleteTicket.emit(ticketId);
+  }
 }

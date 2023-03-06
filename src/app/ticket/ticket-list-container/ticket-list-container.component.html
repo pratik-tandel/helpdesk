@@ -1,1 +1,4 @@
-<app-ticket-list-ui [ticketList]="tickets$ | async"></app-ticket-list-ui>
+<app-ticket-list-ui 
+    [ticketList]="tickets$ | async"
+    (deleteTicket)="onDeleteTicket($event)"
+></app-ticket-list-ui>

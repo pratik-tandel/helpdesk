@@ -17,4 +17,8 @@ export class TicketService {
   addTicket(ticket: Ticket) {
     return this._http.post<Ticket>(this.url, ticket);
   }
+
+  deleteTicket(ticketId: number) {
+    return this._http.delete<Ticket>(`${this.url}/${ticketId}`);
+  }
 }
