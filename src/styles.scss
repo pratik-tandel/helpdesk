@@ -1,3 +1,9 @@
+// regular style toast
+@import 'ngx-toastr/toastr';
+
+// ng-select 
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 //  app-icons
 @import './assets/app-icon/app-icons.scss';
 
@@ -16,5 +22,5 @@
 //  app specific utilities
 @import './assets/scss/utilities/index';
 
-// regular style toast
-@import 'ngx-toastr/toastr';
+// components
+@import './assets/scss/component/index';

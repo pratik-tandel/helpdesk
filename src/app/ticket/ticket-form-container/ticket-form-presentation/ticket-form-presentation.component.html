@@ -4,12 +4,17 @@
         py-4">
         <h2 class="text-center">Create a New Ticket</h2>
         <!-- starts:  Ticket form -->
-        <form class="overflow-auto px-4" [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+        <form class="overflow-auto px-4" [formGroup]="ticketForm"
+            (ngSubmit)="onSubmit()">
             <div class="form-group mb-4">
                 <label for="category">Category*</label>
-                <input formControlName="category" type="text"
-                    class="form-control" id="category"
-                    placeholder="Enter category" />
+                <ng-select class="form-control" id="category"
+                    [items]="categories"
+                    bindLabel="categoryName"
+                    bindValue="categoryName"
+                    [(ngModel)]="selectedCategory"
+                    formControlName="category">
+                </ng-select>
                 <div class="invalid-feedback d-flex"
                     *ngIf="formControls['category'].errors?.['required'] &&
                     formControls['category'].touched">
@@ -41,7 +46,7 @@
                 <label for="priority">Priority*</label>
                 <input formControlName="priority" type="text"
                     class="form-control" id="priority"
-                    placeholder="Enter priority " />                     
+                    placeholder="Enter priority " />
                 <div class="invalid-feedback d-flex"
                     *ngIf="formControls['priority'].errors?.['required'] &&
                     formControls['priority'].touched">

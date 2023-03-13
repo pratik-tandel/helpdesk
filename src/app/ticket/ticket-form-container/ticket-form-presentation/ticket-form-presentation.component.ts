@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Ticket } from '../../ticket.model';
+import { Category, Ticket } from '../../ticket.model';
 import { TicketFormPresenterService } from '../ticket-form-presenter/ticket-form-presenter.service';
 
 @Component({
@@ -9,8 +9,23 @@ import { TicketFormPresenterService } from '../ticket-form-presenter/ticket-form
   viewProviders: [TicketFormPresenterService]
 })
 export class TicketFormPresentationComponent implements OnInit {
+  @Input() public set categories(value: Category[] | null) {
+    if (value) {
+      this._categories = value;
+      console.log(this._categories);
+    }
+  }
+
+  public get categories(): Category[] | null {
+    return this._categories;
+  }
+
   @Output() public addTicket: EventEmitter<Ticket>;
+
   public ticketForm: FormGroup;
+  public selectedCategory!: string;
+  
+  private _categories!: Category[];
 
   constructor(
     private _ticketFormPresenter: TicketFormPresenterService

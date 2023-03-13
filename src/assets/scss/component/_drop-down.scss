@@ -1,14 +1,23 @@
-.hover-box{
-    &:hover{
-        .show-hover_box{
+.hover-box {
+    &:hover {
+        .show-hover_box {
             opacity: 1;
-            visibility:visible;
+            visibility: visible;
             width: auto;
         }
     }
-    .show-hover_box{
+
+    .show-hover_box {
         opacity: 0;
         visibility: hidden;
         width: 0;
+    }
+}
+
+.ng-select .ng-select-container {
+    border: none;
+
+    &:focus {
+        border: none;
     }
 }

@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { TicketRoutingModule } from './ticket-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { TicketFormContainerComponent } from './ticket-form-container/ticket-form-container.component';
 import { TicketFormPresentationComponent } from './ticket-form-container/ticket-form-presentation/ticket-form-presentation.component';
 import { TicketListContainerComponent } from './ticket-list-container/ticket-list-container.component';
 import { TicketListPresentationComponent } from './ticket-list-container/ticket-list-presentation/ticket-list-presentation.component';
+import { TicketRoutingModule } from './ticket-routing.module';
 import { TicketComponent } from './ticket.component';
 import { TicketService } from './ticket.service';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,9 +25,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     TicketRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgSelectModule
   ],
-  providers:[
+  providers: [
     TicketService
   ]
 })

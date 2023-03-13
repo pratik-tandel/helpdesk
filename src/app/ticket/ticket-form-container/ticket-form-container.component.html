@@ -1,1 +1,4 @@
-<app-ticket-form-ui (addTicket)="onAddTicket($event)"></app-ticket-form-ui>
+<app-ticket-form-ui
+    [categories]="categories$ | async"
+    (addTicket)="onAddTicket($event)"
+></app-ticket-form-ui>

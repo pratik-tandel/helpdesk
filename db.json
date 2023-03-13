@@ -25,5 +25,43 @@
       "id": 3
     }
   ],
-  "tickets": []
+  "tickets": [
+    {
+      "category": "Account",
+      "subject": "Test",
+      "message": "awe",
+      "priority": "ae",
+      "assignee": "Neel Pardeshi",
+      "status": "New",
+      "raisedBy": "Pratik Tandel",
+      "updated": "2023-03-13T11:41:05.129Z",
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "1R University"
+    },
+    {
+      "id": 2,
+      "categoryName": "Account"
+    },
+    {
+      "id": 3,
+      "categoryName": "Devops"
+    },
+    {
+      "id": 4,
+      "categoryName": "HR"
+    },
+    {
+      "id": 5,
+      "categoryName": "Infrastructure"
+    },
+    {
+      "id": 6,
+      "categoryName": "Office Administration"
+    }
+  ]
 }
