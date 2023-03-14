@@ -3,7 +3,7 @@
         <h3 class="mb-0 text-secondary">All Tickets</h3>
     </header>
     <!-- starts:ticket list table -->
-    <table class="table">
+    <table class="table" id="ticket-table">
         <thead>
             <tr>
                 <th scope="col">STATUS</th>
@@ -26,8 +26,9 @@
                 <td>{{ticket?.id}}</td>
                 <td>{{ticket?.updated | date: 'medium'}}</td>
                 <td>
-                    <button class="btn btn-info mx-2" [routerLink]="['edit', ticket?.id]">Edit</button>
-                    <button class="btn btn-danger text-white" (click)="onDelete(ticket.id)">Delete</button>
+                    <button class="btn btn-info" [routerLink]="['edit', ticket?.id]">Edit</button>
+                    <button class="btn btn-danger text-white mx-2" (click)="onDelete(ticket.id)">Delete</button>
+                    <button class="btn btn-info text-white" (click)="exportExcel()">.xls</button>
                 </td>
             </tr>
         </tbody>
