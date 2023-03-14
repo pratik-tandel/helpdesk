@@ -24,9 +24,9 @@
                 <td>{{ticket?.assignee}}</td>
                 <td>{{ticket?.category}}</td>
                 <td>{{ticket?.id}}</td>
-                <td>{{ticket?.updated}}</td>
+                <td>{{ticket?.updated | date: 'medium'}}</td>
                 <td>
-                    <button class="btn btn-info mx-2">Edit</button>
+                    <button class="btn btn-info mx-2" [routerLink]="['edit', ticket?.id]">Edit</button>
                     <button class="btn btn-danger text-white" (click)="onDelete(ticket.id)">Delete</button>
                 </td>
             </tr>

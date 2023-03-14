@@ -14,8 +14,16 @@ export class TicketService {
     return this._http.get<Ticket[]>(`${this.url}tickets`);
   }
 
+  getTicketById(id: string): Observable<Ticket> {
+    return this._http.get<Ticket>(`${this.url}tickets/${id}`);
+  }
+
   addTicket(ticket: Ticket) {
     return this._http.post<Ticket>(`${this.url}tickets`, ticket);
+  }
+
+  editTicket(ticket: Ticket, ticketId: string) {
+    return this._http.put<Ticket>(`${this.url}tickets/${ticketId}`, ticket);
   }
 
   deleteTicket(ticketId: number) {

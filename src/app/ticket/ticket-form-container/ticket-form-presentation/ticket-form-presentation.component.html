@@ -2,7 +2,7 @@
     align-items-center justify-content-center py-4">
     <section class="col-xl-6 col-lg-6 col-md-7 col-sm-9 col-11
         py-4">
-        <h2 class="text-center">Create a New Ticket</h2>
+        <h2 class="text-center">{{ isEditMode ? 'Edit Ticket': 'Create a New Ticket' }}</h2>
         <!-- starts:  Ticket form -->
         <form class="overflow-auto px-4" [formGroup]="ticketForm"
             (ngSubmit)="onSubmit()">
@@ -54,8 +54,8 @@
                 </div>
             </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Create Ticket</button>
-                <button type="button" class="btn btn-outline-dark mx-2">Cancel</button>
+                <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Edit Ticket': 'Create Ticket' }}</button>
+                <button type="button" class="btn btn-outline-dark mx-2" (click)="onCancel()">Cancel</button>
             </div>
         </form>
         <!-- ends: form -->

@@ -6,19 +6,23 @@ import { TicketComponent } from './ticket.component';
 
 const routes: Routes = [
   {
-  path: '',
-  component: TicketComponent,
-  children: [
-    {
-      path: '',
-      component: TicketListContainerComponent,
-    },
-    {
-      path: "add",
-      component: TicketFormContainerComponent
-    }
-  ]
-}
+    path: '',
+    component: TicketComponent,
+    children: [
+      {
+        path: '',
+        component: TicketListContainerComponent,
+      },
+      {
+        path: 'add',
+        component: TicketFormContainerComponent
+      },
+      {
+        path: 'edit/:id',
+        component: TicketFormContainerComponent
+      }
+    ]
+  }
 
 ];
 

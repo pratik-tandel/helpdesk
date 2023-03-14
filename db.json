@@ -23,19 +23,38 @@
       "password": "Pass",
       "confirmPassword": "Pass",
       "id": 3
+    },
+    {
+      "name": "Pratik",
+      "lastName": "Tandel",
+      "userName": "pratiktandel12@gmail.com",
+      "password": "Test",
+      "confirmPassword": "Test",
+      "id": 4
     }
   ],
   "tickets": [
     {
-      "category": "Account",
+      "category": "Infrastructure",
       "subject": "Test",
       "message": "awe",
       "priority": "ae",
       "assignee": "Neel Pardeshi",
       "status": "New",
       "raisedBy": "Pratik Tandel",
-      "updated": "2023-03-13T11:41:05.129Z",
+      "updated": "2023-03-13T12:12:15.633Z",
       "id": 1
+    },
+    {
+      "category": "1R University",
+      "subject": "Test",
+      "message": "TEst",
+      "priority": "TEStse",
+      "assignee": "Neel Pardeshi",
+      "status": "New",
+      "raisedBy": "Pratik Tandel",
+      "updated": "2023-03-13T12:12:39.111Z",
+      "id": 2
     }
   ],
   "categories": [

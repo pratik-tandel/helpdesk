@@ -1,4 +1,6 @@
 <app-ticket-form-ui
     [categories]="categories$ | async"
+    [ticketData]="ticketData$ | async"
     (addTicket)="onAddTicket($event)"
+    (editTicket)="onEditTicket($event)"
 ></app-ticket-form-ui>
