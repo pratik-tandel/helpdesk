@@ -37,7 +37,7 @@ export class TicketFormPresenterService {
     }
     ticketForm.value.status = 'New';
     ticketForm.value.raisedBy = this.getUserName();
-    ticketForm.value.assignee = 'Neel Pardeshi';
+    ticketForm.value.assignee = this.setAssignee(ticketForm.value.category);
     ticketForm.value.updated = new Date().toISOString();
     this.verifiedForm.next(ticketForm.value);
   }
@@ -45,5 +45,33 @@ export class TicketFormPresenterService {
   getUserName(): string {
     const userDetails = this._auth?.getUserDetails();
     return `${userDetails?.name} ${userDetails?.lastName}` || '';
+  }
+
+  setAssignee(category: string): string {
+    let assignee = '';
+    switch (category) {
+      case '1R University':
+        assignee = 'Rukshar Rangara';
+        break;
+      case 'Account':
+        assignee = 'Nishtha Vij';
+        break;
+      case 'Devops':
+        assignee = 'Sarvesh Bhuva';
+        break;
+      case 'HR':
+        assignee = 'Samim Shaikh';
+        break;
+      case 'Infrastructure':
+        assignee = 'Neel Pardeshi';
+        break;
+      case 'Office Administration':
+        assignee = 'Mayuri Patel';
+        break;
+      default:
+        assignee = '';
+    }
+
+    return assignee;
   }
 }
