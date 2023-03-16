@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header-ui',
@@ -15,7 +16,11 @@ export class HeaderComponent {
   public employeeName: string = "";
   
 
-  constructor(private _route: ActivatedRoute) {
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _auth: AuthService
+  ) {
     /** initialize the varriables */
     this.toggleSidebarmenu = new EventEmitter();
   }
@@ -29,5 +34,10 @@ export class HeaderComponent {
   /*display employee name */
   ngOnInit(): void {
     this.employeeName = this._route.snapshot.queryParams?.['employeeId'];
+  }
+
+  onLogout() {
+    this._router.navigate(['login']);
+    this._auth.logoutUser();
   }
 }

@@ -12,8 +12,11 @@ export class AuthService {
   }
   
   getUserDetails(){
-    const userDetails = localStorage.getItem("userDetails") || ""
-    return JSON.parse(userDetails);
+    const userDetails = localStorage?.getItem("userDetails");
+    return userDetails ? JSON.parse(userDetails): "";
   }
   
+  logoutUser() {
+    localStorage.clear();
+  }
 }
