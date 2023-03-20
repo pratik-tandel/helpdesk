@@ -28,8 +28,12 @@
                 <td>
                     <button class="btn btn-info" [routerLink]="['edit', ticket?.id]">Edit</button>
                     <button class="btn btn-danger text-white mx-2" (click)="onDelete(ticket.id)">Delete</button>
-                    <button class="btn btn-info text-white me-2" (click)="exportExcel()">.xls</button>
-                    <button class="btn btn-info text-white" (click)="exportPdf()">.pdf</button>
+                    <button class="btn btn-info text-white me-2" (click)="exportExcel()">
+                        <span class="bi bi-download ms-2"></span> .xls
+                    </button>
+                    <button class="btn btn-info text-white" (click)="exportPdf()">
+                        <span class="bi bi-download ms-2"></span> .pdf
+                    </button>
                 </td>
             </tr>
         </tbody>
