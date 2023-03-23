@@ -11,6 +11,7 @@ import { TicketListPresentationComponent } from './ticket-list-container/ticket-
 import { TicketRoutingModule } from './ticket-routing.module';
 import { TicketComponent } from './ticket.component';
 import { TicketService } from './ticket.service';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { TicketService } from './ticket.service';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     TicketRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,

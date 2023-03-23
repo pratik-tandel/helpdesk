@@ -1,6 +1,9 @@
 <div>
-    <header class="mb-3 pb-3 border-bottom">
+    <header class="mb-3 pb-3 border-bottom d-flex">
         <h3 class="mb-0 text-secondary">All Tickets</h3>
+        <div class="search-wrapper col-4 ms-4">
+            <app-search (search)="onSearch($event)"></app-search>
+        </div>
     </header>
     <!-- starts:ticket list table -->
     <table class="table" id="ticket-table">
@@ -17,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let ticket of ticketList">
+            <tr *ngFor="let ticket of filteredTickets">
                 <td class="text-primary">{{ticket.status}}</td>
                 <td>{{ticket?.subject}}</td>
                 <td>{{ticket?.raisedBy}}</td>

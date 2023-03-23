@@ -3,15 +3,18 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { Ticket } from '../../ticket.model';
+import { TicketListPresenterService } from '../ticket-list-presenter/ticket-list-presenter.service';
 
 @Component({
   selector: 'app-ticket-list-ui',
   templateUrl: './ticket-list-presentation.component.html',
+  viewProviders: [TicketListPresenterService]
 })
 export class TicketListPresentationComponent {
   @Input() public set ticketList(value: Ticket[] | null) {
     if (value) {
       this._ticketList = value;
+      this.filteredTickets = value;
     }
   }
 
@@ -22,15 +25,23 @@ export class TicketListPresentationComponent {
   @Output() public deleteTicket: EventEmitter<number>;
 
   public fileName: string = 'Tickets';
+  public filteredTickets: Ticket[];
 
   private _ticketList!: Ticket[] | null;
 
-  constructor() {
+  constructor(
+    private _ticketListPresenter: TicketListPresenterService
+  ) {
+    this.filteredTickets = [];
     this.deleteTicket = new EventEmitter();
   }
 
   onDelete(ticketId: number) {
     this.deleteTicket.emit(ticketId);
+  }
+
+  onSearch(searchKey: string) {
+    this.filteredTickets = this._ticketListPresenter.filterTickets(this.ticketList || [], searchKey);
   }
 
   exportExcel(): void {
