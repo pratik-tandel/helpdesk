@@ -2,7 +2,7 @@
     <nav class="primary-nav overflow-auto h-100">
         <ul class="list-group">
             <li *ngFor="let sidebarMenus of sidebarMenu" class="primary-nav-items">
-                <a [routerLink]="sidebarMenus.link" class="primary-nav-link d-block" [routerLinkActive]="sidebarMenus.class" (click)="closedSidebar()" title="{{sidebarMenus.text}}">{{sidebarMenus.text}}</a>
+                <a [routerLink]="sidebarMenus.link" class="primary-nav-link d-block" [routerLinkActive]="sidebarMenus.className" (click)="toggleSidebarMenu()" title="{{sidebarMenus.text}}">{{sidebarMenus.text}}</a>
             </li>
         </ul>
     </nav>

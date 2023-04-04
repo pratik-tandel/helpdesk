@@ -1,5 +1,5 @@
-/* typecast the RegisteredUser */
-export class RegisteredUser {
+/** Registered Employee model */
+export class RegisteredEmployee {
   constructor(
     public userName: string,
     public password: string,
@@ -10,9 +10,10 @@ export class RegisteredUser {
   ) { }
 }
 
-export class LoginEmployees {
+/** Employee Credentials model */
+export class EmployeeCredentials {
   constructor(
     public userName: string,
-    public password: string,
+    public password: string
   ) { }
 }

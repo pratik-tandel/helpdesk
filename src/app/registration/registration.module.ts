@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { RegistrationRoutingModule } from './registration-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegistrationFormContainerComponent } from './registration-form-container/registration-container.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegistrationFormContainerComponent } from './registration-form-container/registration-form-container.component';
 import { RegistrationFormPresentationComponent } from './registration-form-container/registration-form-presentation/registration-form-presentation.component';
+import { RegistrationRoutingModule } from './registration-routing.module';
 import { RegistrationService } from './registration.service';
 
 
@@ -18,10 +18,9 @@ import { RegistrationService } from './registration.service';
   imports: [
     CommonModule,
     RegistrationRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
+    ReactiveFormsModule
   ],
-  providers:[
+  providers: [
     RegistrationService
   ]
 })

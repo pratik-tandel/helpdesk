@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { SidebarMenu } from '../../model/common.model';
 
 
 @Component({
@@ -7,46 +8,51 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SidebarComponent {
 
-  public togglemenubar: boolean = false;
-
+  /** toggle sidebar event emitter */
   @Output() public toggleSidebar: EventEmitter<boolean>;
 
-  sidebarMenu = [
-    {
-      text: 'All Ticket',
-      link: 'tickets',
-      class: 'active'
-    },
-    {
-      text: 'New',
-      link: '',
-      class: 'active'
-    },
-    {
-      text: 'Pending',
-      link: '',
-      class: 'active'
-    },
-    {
-      text: 'In Progress',
-      link: '',
-      class: 'active'
-    },
-    {
-      text: 'closed',
-      link: '',
-      class: 'active'
-    },
-  ]
+  /** boolean to check if menu bar is visible */
+  public isMenuVisible: boolean;
+
+  /** sidebar menu data */
+  sidebarMenu: SidebarMenu[];
 
   constructor() {
     this.toggleSidebar = new EventEmitter;
+    this.isMenuVisible = false;
+    this.sidebarMenu = [
+      {
+        text: 'All Ticket',
+        link: 'tickets',
+        className: 'active'
+      },
+      {
+        text: 'New',
+        link: '',
+        className: 'active'
+      },
+      {
+        text: 'Pending',
+        link: '',
+        className: 'active'
+      },
+      {
+        text: 'In Progress',
+        link: '',
+        className: 'active'
+      },
+      {
+        text: 'closed',
+        link: '',
+        className: 'active'
+      },
+    ]
   }
-  
-  /* togglesidebar */
-  closedSidebar() {
-    this.togglemenubar = !this.togglemenubar;
-    this.toggleSidebar.emit(this.togglemenubar)
+
+  /* toggle sidebar menu */
+  toggleSidebarMenu() {
+    this.isMenuVisible = !this.isMenuVisible;
+    this.toggleSidebar.emit(this.isMenuVisible)
   }
 
 }

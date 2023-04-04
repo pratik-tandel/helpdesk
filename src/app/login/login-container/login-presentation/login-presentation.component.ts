@@ -1,10 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
-import { LoginEmployees } from '../../login-model';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { AbstractControl, FormGroup } from '@angular/forms';
+import { EmployeeCredentials } from '../../login-model';
 import { LoginPresenterService } from '../login-presenter/login-presenter.service';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login-ui',
@@ -12,10 +9,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
   viewProviders: [LoginPresenterService],
 })
 export class LoginPresentationComponent {
+  /** login employee event emitter */
+  @Output() loginEmployee: EventEmitter<EmployeeCredentials>;
 
-  @Output() loginEmployee: EventEmitter<LoginEmployees>;
-
-  public loginForm: any;
+  /** login form */
+  public loginForm: FormGroup;
 
   constructor(
     private _loginPresenterService: LoginPresenterService
@@ -30,13 +28,12 @@ export class LoginPresentationComponent {
   }
 
   ngOnInit() {
-    this._loginPresenterService.verifiedForm$
-      .subscribe(res => this.loginEmployee.emit(res));
+    this._loginPresenterService.loginFormData$.subscribe(res => this.loginEmployee.emit(res));
   }
 
 
   /** Login registered employee */
-  login() {
-    this._loginPresenterService.loginUsers(this.loginForm);
+  onSubmit() {
+    this._loginPresenterService.validateForm(this.loginForm);
   }
 }

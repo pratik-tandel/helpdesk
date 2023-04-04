@@ -1,8 +1,6 @@
 
 import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 export class CustomFormValidator {
-    public existingUser: any;
-
     /** cannot contain space */
     static cannotContainSpace(control: AbstractControl): ValidationErrors | null {
         if ((control?.value as string)?.indexOf(' ') >= 0) {
@@ -11,8 +9,7 @@ export class CustomFormValidator {
         return null;
     }
 
-    /** confirm password */
-
+    /** check if password and confirm password are same */
     static checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
         return (group: FormGroup) => {
 

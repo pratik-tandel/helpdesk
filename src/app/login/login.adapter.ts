@@ -1,15 +1,11 @@
-import { Employee } from "../core/component/model/common.model";
-import {  RegisteredUser } from "../login/login-model";
+import { Employee } from "../core/model/common.model";
+import { RegisteredEmployee } from "./login-model";
+
 export class LoginAdapter {
 
-    public toResponse(items: Employee[]): RegisteredUser[] {
-        // const registeredEmployee: RegisteredUser = new RegisteredUser(
-        //     item.userName,
-        //     item.password
-        // )
-        // return registeredEmployee;
+    public toResponse(items: Employee[]): RegisteredEmployee[] {
         return items.map((item: Employee) => {
-            const registeredEmployee: RegisteredUser = new RegisteredUser(
+            const registeredEmployee: RegisteredEmployee = new RegisteredEmployee(
                 item.userName,
                 item.password,
                 item.name,
@@ -20,5 +16,5 @@ export class LoginAdapter {
         })
 
     }
-  
+
 }

@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/internal/Subject';
+import { EmployeeCredentials } from '../../login-model';
 
 @Injectable()
 export class LoginPresenterService {
-  public verifiedForm$: Observable<any>
-  public verifiedForm: Subject<any>
+  public loginFormData$: Observable<EmployeeCredentials>
+  public loginFormData: Subject<EmployeeCredentials>
 
   constructor(private _formBuilder: FormBuilder) {
-    this.verifiedForm = new Subject();
-    this.verifiedForm$ = this.verifiedForm.asObservable(); /* stored subject variable to asObservable */
+    this.loginFormData = new Subject();
+    this.loginFormData$ = this.loginFormData.asObservable(); /* stored subject variable to asObservable */
   }
 
   /**apply validation */
@@ -22,10 +23,13 @@ export class LoginPresenterService {
       })
   }
 
-  /**Checked username and password */
-  public loginUsers(loginForm: FormGroup) {
+  /**
+   * check if form is valid
+   * @param loginForm 
+   */
+  public validateForm(loginForm: FormGroup) {
     if (loginForm.valid) {
-      this.verifiedForm.next(loginForm.value);
+      this.loginFormData.next(loginForm.value);
     }
   }
 }

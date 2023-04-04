@@ -13,7 +13,7 @@ export class TicketFormContainerComponent {
 
   public categories$: Observable<Category[]>;
   public ticketId: string;
-  public ticketData$: Observable<Ticket>;
+  public ticketData$!: Observable<Ticket>;
 
   constructor(
     private _ticketService: TicketService,
@@ -23,7 +23,9 @@ export class TicketFormContainerComponent {
   ) {
     this.categories$ = this.getCategories();
     this.ticketId = this._activatedRoute?.snapshot?.params['id'];
-    this.ticketData$ = this._ticketService.getTicketById(this.ticketId);
+    if (this.ticketId) {
+      this.ticketData$ = this._ticketService.getTicketById(this.ticketId);
+    }
   }
 
   onAddTicket(ticket: Ticket) {

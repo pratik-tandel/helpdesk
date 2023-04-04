@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { LoginEmployees, RegisteredUser } from '../login-model';
+import { EmployeeCredentials, RegisteredEmployee } from '../login-model';
 import { LoginService } from '../login.service';
 @Component({
   selector: 'app-login-container',
   templateUrl: './login-container.component.html',
 })
 export class LoginContainerComponent {
-  public loginEmployee$!: Observable<LoginEmployees>;
-  public loginList$!: Observable<RegisteredUser[]>;
 
   constructor(
     private _loginService: LoginService,
@@ -20,16 +17,16 @@ export class LoginContainerComponent {
     private _router: Router
   ) { }
 
-  ngOnInit(): void {
-    this.loginList$ = this.getRegisteredUsers();
-  }
+  /**
+   * validate employee login
+   * @param loginEmpoyee 
+   */
+  onEmployeeLogin(loginEmpoyee: EmployeeCredentials) {
+    this.getRegisteredEmployeeData().subscribe((employees: RegisteredEmployee[]) => {
+      const existingEmployee = employees.find((employee: RegisteredEmployee) => employee.userName === loginEmpoyee.userName && employee.password === loginEmpoyee.password);
 
-  addLoginEmployee(loginEmpoyee: LoginEmployees) {
-    this.getRegisteredUsers().subscribe((users: RegisteredUser[]) => {
-      const existingUser = users.find((user: RegisteredUser) => user.userName === loginEmpoyee.userName && user.password === loginEmpoyee.password);
-
-      if (existingUser) {
-        this._authService.setUserDetails(existingUser);
+      if (existingEmployee) {
+        this._authService.setUserDetails(existingEmployee);
         this._router.navigate(['/'])
       } else {
         this._toastr.error('Username and password is wrong');
@@ -37,7 +34,8 @@ export class LoginContainerComponent {
     })
   }
 
-  getRegisteredUsers() {
-    return this._loginService.getRegisteredUser();
+  /** get registered employee data */
+  getRegisteredEmployeeData() {
+    return this._loginService.getRegisteredEmployees();
   }
 }

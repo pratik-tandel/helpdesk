@@ -2,7 +2,7 @@
     <a class="px-4" routerLink="/login">Go to Login</a>
     <section class="d-flex border m-4 rounded">
         <!-- starts:  registration form -->
-        <form class="overflow-auto p-3 col-md-6 col-12" [formGroup]="registrationForm">
+        <form class="overflow-auto p-3 col-md-6 col-12" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
             <header class="text-secondary pb-3 mb-3 border-bottom">
                 <h2 class="mb-0">Registration</h2>
             </header>
@@ -73,8 +73,7 @@
                 </div>
             </div>
             <footer>
-                <button (click)="addRegisteredEmployee()" type="submit"
-                    class="btn btn-primary text-uppercase px-4">Submit</button>
+                <button type="submit" class="btn btn-primary text-uppercase px-4">Submit</button>
             </footer>
         </form>
         <!-- ends: form -->

@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Employee } from '../core/component/model/common.model';
+import { Employee } from '../core/model/common.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class RegistrationService {
 
   constructor(private http: HttpClient) { }
 
-  private URL = 'http://localhost:3000/registeredEmployee';
+  private url = 'http://localhost:3000/employees';
 
-  /* Create Data (Add employee)*/
-  addRegisterEmployee(formBody: Employee) {
-    return this.http.post<Employee>(this.URL, formBody);
+  /**
+   * add a new employee
+   * @param employeeData 
+   */
+  addEmployee(employeeData: Employee) {
+    return this.http.post<Employee>(this.url, employeeData);
   }
 
-  /**Get registration employee details */
-  getRegisteredEmployees() {
-    return this.http.get<Employee[]>(this.URL);
+  /** get registered employees */
+  getRegisteredEmployees(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.url);
   }
 }

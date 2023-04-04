@@ -6,15 +6,17 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './master.component.html',
 })
 export class MasterComponent {
-
+  /** user details */
   public userDetails: any;
+  /** boolean to toggle sidebar visibility */
+  public isSidebarVisible = false;
 
-  constructor(private _authService:AuthService){
+  constructor(private _authService: AuthService) {
     this.userDetails = this._authService.getUserDetails();
   }
-  public isCheckedToggle = false;
-  public toggle(): void {
-    this.isCheckedToggle = !this.isCheckedToggle;
+
+  public onSidebarToggle(): void {
+    this.isSidebarVisible = !this.isSidebarVisible;
   }
 
 }

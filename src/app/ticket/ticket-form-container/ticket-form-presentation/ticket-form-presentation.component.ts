@@ -53,7 +53,7 @@ export class TicketFormPresentationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._ticketFormPresenter.verifiedForm$.subscribe((ticket: Ticket) => {
+    this._ticketFormPresenter.ticketFormData$.subscribe((ticket: Ticket) => {
       this.isEditMode ? this.editTicket.emit(ticket) : this.addTicket.emit(ticket);
     });
   }

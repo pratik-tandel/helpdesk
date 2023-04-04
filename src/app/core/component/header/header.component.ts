@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -8,13 +8,16 @@ import { AuthService } from '../../services/auth.service';
 
 })
 export class HeaderComponent {
-@Input() public userDetails:any;
+  /** user details */
+  @Input() public userDetails!: any;
 
-  @Output() public toggleSidebarmenu: EventEmitter<boolean>; 
+  /** toggle sidebar event emitter */
+  @Output() public toggleSidebar: EventEmitter<boolean>;
 
-  public isShowSidebar = false;
-  public employeeName: string = "";
-  
+  /** boolean to toggle sidebar */
+  public isSidebarVisible: boolean;
+  /** logged in employee name */
+  public employeeName: string;
 
   constructor(
     private _route: ActivatedRoute,
@@ -22,20 +25,22 @@ export class HeaderComponent {
     private _auth: AuthService
   ) {
     /** initialize the varriables */
-    this.toggleSidebarmenu = new EventEmitter();
+    this.toggleSidebar = new EventEmitter();
+    this.isSidebarVisible = false;
+    this.employeeName = '';
   }
 
-  /* toggle sidebar */
-  toggleSidebar() {
-    this.isShowSidebar = !this.isShowSidebar;
-    this.toggleSidebarmenu.emit(this.isShowSidebar);
+  /* toggle sidebar menu */
+  toggleSidebarMenu() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+    this.toggleSidebar.emit(this.isSidebarVisible);
   }
 
-  /*display employee name */
   ngOnInit(): void {
     this.employeeName = this._route.snapshot.queryParams?.['employeeId'];
   }
 
+  /** logout employee */
   onLogout() {
     this._router.navigate(['login']);
     this._auth.logoutUser();

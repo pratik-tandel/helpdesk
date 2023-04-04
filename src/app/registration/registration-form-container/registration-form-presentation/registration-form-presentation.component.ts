@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { Employee } from 'src/app/core/component/model/common.model';
-/**import RegistrationPresenterService and used it's method */
-import { RegistrationFormPresenterService } from "../registration-form-presenter/registration-presenter.service";
+import { Employee } from 'src/app/core/model/common.model';
+import { RegistrationFormPresenterService } from "../registration-form-presenter/registration-form-presenter.service";
 
 
 @Component({
@@ -12,28 +11,15 @@ import { RegistrationFormPresenterService } from "../registration-form-presenter
 
 })
 export class RegistrationFormPresentationComponent {
-  @Input() public set employeeList(employeeDetails: any) {
-    if (employeeDetails) {
-      this._employeeList = employeeDetails;
-      this.registrationForm = this._registrationPresenterService.bindForm();
-    }
-  }
+  /** add employee event emitter */
+  @Output() addEmployee: EventEmitter<Employee>;
 
-  //  emit form data
-  @Output() addRegistrationFormData: EventEmitter<Employee>;
-
-  public get employeeList(): any {
-    return this._employeeList;
-  }
+  /** registration form */
   public registrationForm: FormGroup;
 
-  private _employeeList: any;
-
-  /** inject the services into constructor */
-  constructor(private _registrationPresenterService: RegistrationFormPresenterService) {
-    /** initializing the variables */
-    this.registrationForm = this._registrationPresenterService.bindForm();
-    this.addRegistrationFormData = new EventEmitter();
+  constructor(private _registrationFormPresenter: RegistrationFormPresenterService) {
+    this.registrationForm = this._registrationFormPresenter.bindForm();
+    this.addEmployee = new EventEmitter();
   }
 
   /** get form controls */
@@ -42,12 +28,11 @@ export class RegistrationFormPresentationComponent {
   }
 
   ngOnInit() {
-    this._registrationPresenterService.verifiedForm$
-      .subscribe(res => this.addRegistrationFormData.emit(res));
+    this._registrationFormPresenter.registerFormData$.subscribe(res => this.addEmployee.emit(res));
   }
 
-  /** add registered employee */
-  addRegisteredEmployee() {
-    this._registrationPresenterService.registrationFormData(this.registrationForm);
+  /** on form submit */
+  onSubmit() {
+    this._registrationFormPresenter.validateForm(this.registrationForm);
   }
 }

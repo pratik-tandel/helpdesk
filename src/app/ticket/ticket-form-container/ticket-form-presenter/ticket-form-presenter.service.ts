@@ -7,15 +7,15 @@ import { Ticket } from '../../ticket.model';
 @Injectable()
 export class TicketFormPresenterService {
 
-  public verifiedForm$: Observable<Ticket>
-  public verifiedForm: Subject<Ticket>
+  public ticketFormData$: Observable<Ticket>
+  public ticketFormData: Subject<Ticket>
 
   constructor(
     private _fb: FormBuilder,
     private _auth: AuthService
   ) {
-    this.verifiedForm = new Subject();
-    this.verifiedForm$ = this.verifiedForm.asObservable();
+    this.ticketFormData = new Subject();
+    this.ticketFormData$ = this.ticketFormData.asObservable();
   }
 
   bindForm() {
@@ -39,7 +39,7 @@ export class TicketFormPresenterService {
     ticketForm.value.raisedBy = this.getUserName();
     ticketForm.value.assignee = this.setAssignee(ticketForm.value.category);
     ticketForm.value.updated = new Date().toISOString();
-    this.verifiedForm.next(ticketForm.value);
+    this.ticketFormData.next(ticketForm.value);
   }
 
   getUserName(): string {

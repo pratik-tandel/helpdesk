@@ -4,7 +4,6 @@ import { MasterComponent } from './core/component/master/master.component';
 import { AuthGuard } from './core/guard/auth.guard';
 
 const routes: Routes = [
-  /**MasterComponent target to <app-root></app-root> (index.html)  */
   {
     path: '',
     component: MasterComponent,
@@ -21,17 +20,14 @@ const routes: Routes = [
       }
     ]
   },
-  /**lazy loading of registration module */
   {
     path: 'registration',
     loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule)
   },
-  /**lazy loading of login module */
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   }
-
 ];
 
 @NgModule({

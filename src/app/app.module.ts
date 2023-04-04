@@ -6,8 +6,8 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MasterComponent } from './core/component/master/master.component';
 import { HeaderComponent } from './core/component/header/header.component';
+import { MasterComponent } from './core/component/master/master.component';
 import { SidebarComponent } from './core/component/sidebar/sidebar.component';
 import { CoreModule } from './core/core.module';
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegistrationFormContainerComponent } from './registration-form-container/registration-container.component';
+import { RegistrationFormContainerComponent } from './registration-form-container/registration-form-container.component';
 
 const routes: Routes = [
   {

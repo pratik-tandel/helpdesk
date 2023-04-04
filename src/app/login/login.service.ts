@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginAdapter } from './login.adapter';
+import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
-import { Employee } from '../core/component/model/common.model';
-import { LoginEmployees } from '../login/login-model';
+import { Employee } from '../core/model/common.model';
+import { LoginAdapter } from './login.adapter';
 
 @Injectable()
 export class LoginService {
 
-  private URL = 'http://localhost:3000/registeredEmployee';
+  private url = 'http://localhost:3000/employees';
+
   constructor(private _http: HttpClient, private _loginAdapter: LoginAdapter) { }
 
-  /**getLogin details */
-  getRegisteredUser() {
-    return this._http.get<Employee[]>(this.URL).pipe(
+  /** get registered employees */
+  getRegisteredEmployees() {
+    return this._http.get<Employee[]>(this.url).pipe(
       map((data: Employee[]) => {
         return this._loginAdapter.toResponse(data)
       })

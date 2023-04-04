@@ -1,13 +1,12 @@
 <!-- starts: Helpdesk Dashboard layout -->
 <section class="d-flex flex-column h-100 overflow-hidden">
     <!-- strts: header -->
-    <app-header-ui (toggleSidebarmenu)="toggle()" [userDetails]="userDetails"></app-header-ui>
+    <app-header-ui (toggleSidebar)="onSidebarToggle()" [userDetails]="userDetails"></app-header-ui>
     <!-- ends: header -->
     <section class="d-flex h-100 overflow-hidden">
         <!-- starts: primary anv -->
-        <aside class="d-lg-flex flex-column d-none app-sidebar" [ngClass]="{'show-sidebar' : isCheckedToggle}">
-            <app-sidebar-ui (toggleSidebar)="toggle()" class="h-100">
-            </app-sidebar-ui>
+        <aside class="d-lg-flex flex-column d-none app-sidebar" [ngClass]="{'show-sidebar' : isSidebarVisible}">
+            <app-sidebar-ui (toggleSidebar)="onSidebarToggle()" class="h-100"></app-sidebar-ui>
         </aside>
         <!-- ends: primary nav -->
         <!-- starts:main section -->
@@ -16,6 +15,6 @@
         </main>
         <!-- ends: main section-->
     </section>
-    <div [ngClass]="{'modal-backdrop fade show d-lg-none' : isCheckedToggle}" (click)="toggle()"></div>
+    <div [ngClass]="{'modal-backdrop fade show d-lg-none' : isSidebarVisible}" (click)="onSidebarToggle()"></div>
 </section>
 <!-- Ends: Helpdesk Dashboard layout -->

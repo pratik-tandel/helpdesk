@@ -4,7 +4,7 @@
             <h2 class="mb-3">Login</h2>
         </header>
         <!-- starts:  Login form -->
-        <form class="overflow-auto px-4" [formGroup]="loginForm">
+        <form class="overflow-auto px-4" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group mb-4">
                 <label for="userName">UserName/Email</label>
                 <input formControlName="userName" type="text" class="form-control" id="userName"
@@ -27,7 +27,7 @@
                 <button 
                     type="submit" 
                     class="btn btn-primary text-uppercase px-5 w-100 mb-3"
-                    (click)="login()">Login</button>
+                >Login</button>
                 <div class="position-relative mb-2">
                     <span class="v-center h-xs w-100 d-block bg-primary position-absolute"></span>
                     <div class="d-flex justify-content-center align-items-center"><span
