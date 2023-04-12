@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Observable, Subject } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Ticket } from '../../ticket.model';
+import { CATEGORY, ASSIGNEE } from 'src/app/core/utility/constant';
 
 @Injectable()
 export class TicketFormPresenterService {
@@ -62,26 +63,26 @@ export class TicketFormPresenterService {
   setAssignee(category: string): string {
     let assignee = '';
     switch (category) {
-      case '1R University':
-        assignee = 'Rukshar Rangara';
+      case CATEGORY.UNIVERSITY:
+        assignee = ASSIGNEE.UNIVERSITY;
         break;
-      case 'Account':
-        assignee = 'Nishtha Vij';
+      case CATEGORY.ACCOUNT:
+        assignee = ASSIGNEE.ACCOUNT;
         break;
-      case 'Devops':
-        assignee = 'Sarvesh Bhuva';
+      case CATEGORY.DEVOPS:
+        assignee = ASSIGNEE.DEVOPS;
         break;
-      case 'HR':
-        assignee = 'Samim Shaikh';
+      case CATEGORY.HR:
+        assignee = ASSIGNEE.HR;
         break;
-      case 'Infrastructure':
-        assignee = 'Neel Pardeshi';
+      case CATEGORY.INFRASTRUCTURE:
+        assignee = ASSIGNEE.INFRASTRUCTURE;
         break;
-      case 'Office Administration':
-        assignee = 'Mayuri Patel';
+      case CATEGORY.OFFICE_ADMINSTRATION:
+        assignee = ASSIGNEE.OFFICE_ADMINSTRATION;
         break;
       default:
-        assignee = '';
+        assignee = ASSIGNEE.DEFAULT;
     }
 
     return assignee;
