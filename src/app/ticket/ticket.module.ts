@@ -9,7 +9,6 @@ import { TicketFormPresentationComponent } from './ticket-form-container/ticket-
 import { TicketListContainerComponent } from './ticket-list-container/ticket-list-container.component';
 import { TicketListPresentationComponent } from './ticket-list-container/ticket-list-presentation/ticket-list-presentation.component';
 import { TicketRoutingModule } from './ticket-routing.module';
-import { TicketComponent } from './ticket.component';
 import { TicketService } from './ticket.service';
 import { SharedModule } from '../shared/shared.module';
 
@@ -19,8 +18,7 @@ import { SharedModule } from '../shared/shared.module';
     TicketFormContainerComponent,
     TicketFormPresentationComponent,
     TicketListContainerComponent,
-    TicketListPresentationComponent,
-    TicketComponent
+    TicketListPresentationComponent
   ],
   imports: [
     CommonModule,

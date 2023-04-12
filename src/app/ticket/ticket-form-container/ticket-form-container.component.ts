@@ -10,10 +10,12 @@ import { TicketService } from '../ticket.service';
   templateUrl: './ticket-form-container.component.html',
 })
 export class TicketFormContainerComponent {
-
+  /** categories list observable */
   public categories$: Observable<Category[]>;
-  public ticketId: string;
+  /** ticket data observable */
   public ticketData$!: Observable<Ticket>;
+  /** ticket id */
+  public ticketId: string;
 
   constructor(
     private _ticketService: TicketService,
@@ -28,6 +30,10 @@ export class TicketFormContainerComponent {
     }
   }
 
+  /**
+   * add new ticket
+   * @param ticket ticket data
+   */
   onAddTicket(ticket: Ticket) {
     this._ticketService.addTicket(ticket).subscribe((res: any) => {
       this._toastr.success('Ticket added successfully');
@@ -35,6 +41,10 @@ export class TicketFormContainerComponent {
     });
   }
 
+  /**
+   * edit ticket
+   * @param ticket ticket data
+   */
   onEditTicket(ticket: Ticket) {
     this._ticketService.editTicket(ticket, this.ticketId).subscribe((res: any) => {
       this._toastr.success('Ticket edited successfully');
@@ -42,6 +52,7 @@ export class TicketFormContainerComponent {
     });
   }
 
+  /** get categories list */
   getCategories() {
     return this._ticketService.getCategories();
   }

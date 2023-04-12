@@ -10,6 +10,7 @@ import { TicketService } from '../ticket.service';
 })
 export class TicketListContainerComponent implements OnInit {
 
+  /** tickets list observable */
   public tickets$!: Observable<Ticket[]>;
 
   constructor(
@@ -21,10 +22,15 @@ export class TicketListContainerComponent implements OnInit {
     this.getTickets();
   }
 
+  /** get tickets */
   getTickets() {
     this.tickets$ = this._ticketService.getTickets();
   }
 
+  /**
+   * delete tickets
+   * @param ticketId 
+   */
   onDeleteTicket(ticketId: number) {
     return this._ticketService.deleteTicket(ticketId).subscribe((res: any) => {
       this._toastr.success('Ticket deleted successfully');

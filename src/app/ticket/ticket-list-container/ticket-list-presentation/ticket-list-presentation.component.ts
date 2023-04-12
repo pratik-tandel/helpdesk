@@ -11,6 +11,7 @@ import { TicketListPresenterService } from '../ticket-list-presenter/ticket-list
   viewProviders: [TicketListPresenterService]
 })
 export class TicketListPresentationComponent {
+  /** setter for ticket list */
   @Input() public set ticketList(value: Ticket[] | null) {
     if (value) {
       this._ticketList = value;
@@ -22,11 +23,15 @@ export class TicketListPresentationComponent {
     return this._ticketList;
   }
 
+  /** delete ticket eventemitter */
   @Output() public deleteTicket: EventEmitter<number>;
 
+  /** filename to be saved */
   public fileName: string = 'Tickets';
+  /** filtered tickets list */
   public filteredTickets: Ticket[];
 
+  /** tickets list */
   private _ticketList!: Ticket[] | null;
 
   constructor(
@@ -36,14 +41,17 @@ export class TicketListPresentationComponent {
     this.deleteTicket = new EventEmitter();
   }
 
+  /** on delete click */
   onDelete(ticketId: number) {
     this.deleteTicket.emit(ticketId);
   }
 
+  /** on search tickets */
   onSearch(searchKey: string) {
     this.filteredTickets = this._ticketListPresenter.filterTickets(this.ticketList || [], searchKey);
   }
 
+  /** export table to excel */
   exportExcel(): void {
     /* table id */
     let element = document.getElementById('ticket-table');
@@ -55,6 +63,7 @@ export class TicketListPresentationComponent {
     XLSX.writeFile(wb, `${this.fileName}.xls`);
   }
 
+  /** export table to pdf */
   public exportPdf(): void {
     let DATA: any = document.getElementById('ticket-table');
     html2canvas(DATA).then((canvas: any) => {

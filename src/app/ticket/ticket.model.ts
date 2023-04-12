@@ -1,3 +1,4 @@
+/** Ticket model */
 export class Ticket {
     constructor(
         public id: number,
@@ -10,6 +11,7 @@ export class Ticket {
     ) { }
 }
 
+/** Category model */
 export class Category {
     constructor(
         public id: number,

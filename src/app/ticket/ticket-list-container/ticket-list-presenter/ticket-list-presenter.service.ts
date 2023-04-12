@@ -4,6 +4,12 @@ import { Ticket } from '../../ticket.model';
 @Injectable()
 export class TicketListPresenterService {
 
+  /**
+   * filter tickets based on search keyword
+   * @param tickets tickets list
+   * @param searchKey search keyword
+   * @returns filtered tickets list
+   */
   filterTickets(tickets: Ticket[], searchKey: string): Ticket[] | [] {
     return tickets?.filter((ticket: Ticket) =>
       (ticket?.assignee?.toLowerCase()?.includes(searchKey?.toLowerCase()?.trim()) ||

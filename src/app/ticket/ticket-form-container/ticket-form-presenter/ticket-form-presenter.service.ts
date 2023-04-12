@@ -6,8 +6,9 @@ import { Ticket } from '../../ticket.model';
 
 @Injectable()
 export class TicketFormPresenterService {
-
+  /** ticket formdata observable */
   public ticketFormData$: Observable<Ticket>
+  /** ticket formdata subject */
   public ticketFormData: Subject<Ticket>
 
   constructor(
@@ -18,6 +19,7 @@ export class TicketFormPresenterService {
     this.ticketFormData$ = this.ticketFormData.asObservable();
   }
 
+  /** bind form controls */
   bindForm() {
     return this._fb.group({
       category: ['', Validators.required],
@@ -31,6 +33,10 @@ export class TicketFormPresenterService {
     })
   }
 
+  /**
+   * check if form is valid
+   * @param ticketForm 
+   */
   onSubmit(ticketForm: FormGroup) {
     if (!ticketForm.valid) {
       return;
@@ -42,11 +48,17 @@ export class TicketFormPresenterService {
     this.ticketFormData.next(ticketForm.value);
   }
 
+  /** get logged in username */
   getUserName(): string {
     const userDetails = this._auth?.getUserDetails();
     return `${userDetails?.name} ${userDetails?.lastName}` || '';
   }
 
+  /**
+   * sets default assignee to a ticket
+   * @param category category name
+   * @returns assignee name
+   */
   setAssignee(category: string): string {
     let assignee = '';
     switch (category) {

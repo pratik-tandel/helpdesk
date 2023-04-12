@@ -10,6 +10,7 @@ import { TicketFormPresenterService } from '../ticket-form-presenter/ticket-form
   viewProviders: [TicketFormPresenterService]
 })
 export class TicketFormPresentationComponent implements OnInit {
+  /** setter for categories list */
   @Input() public set categories(value: Category[] | null) {
     if (value) {
       this._categories = value;
@@ -20,6 +21,7 @@ export class TicketFormPresentationComponent implements OnInit {
     return this._categories;
   }
 
+  /** setter for ticket data */
   @Input() public set ticketData(value: Ticket | null) {
     if (value) {
       this._ticketData = value;
@@ -32,14 +34,21 @@ export class TicketFormPresentationComponent implements OnInit {
     return this._ticketData;
   }
 
+  /** add ticket event emitter */
   @Output() public addTicket: EventEmitter<Ticket>;
+  /** edit ticket event emitter */
   @Output() public editTicket: EventEmitter<Ticket>;
 
+  /** ticket form group */
   public ticketForm: FormGroup;
+  /** selected category */
   public selectedCategory!: string;
+  /** boolean to check if form is in edit mode */
   public isEditMode: boolean;
 
+  /** categories list */
   private _categories!: Category[];
+  /** ticket data */
   private _ticketData!: Ticket;
 
   constructor(
@@ -58,14 +67,17 @@ export class TicketFormPresentationComponent implements OnInit {
     });
   }
 
+  /** on form submit */
   onSubmit() {
     this._ticketFormPresenter.onSubmit(this.ticketForm);
   }
 
+  /** on form cancel */
   onCancel() {
     this._router.navigateByUrl('tickets');
   }
 
+  /** get form controls */
   get formControls() {
     return this.ticketForm.controls;
   }
