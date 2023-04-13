@@ -32,9 +32,11 @@ export class TicketListContainerComponent implements OnInit {
    * @param ticketId 
    */
   onDeleteTicket(ticketId: number) {
-    return this._ticketService.deleteTicket(ticketId).subscribe((res: any) => {
-      this._toastr.success('Ticket deleted successfully');
-      this.getTickets();
+    this._ticketService.deleteTicket(ticketId).subscribe((res: any) => {
+      if (res) {
+        this._toastr.success('Ticket deleted successfully');
+        this.getTickets();
+      }
     })
   }
 }
