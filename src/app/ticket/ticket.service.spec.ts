@@ -3,7 +3,7 @@ import { TicketService } from "./ticket.service";
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
 import { TICKET_FORM } from 'factory/api-data';
 
-fdescribe("TicketService", () => {
+describe("TicketService", () => {
   let service: TicketService;
   let httpMock: HttpTestingController;
   let url: string = 'http://localhost:3000/';
@@ -17,7 +17,7 @@ fdescribe("TicketService", () => {
     httpMock = TestBed.inject(HttpTestingController);
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
