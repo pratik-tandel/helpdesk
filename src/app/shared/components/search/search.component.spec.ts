@@ -4,7 +4,7 @@ import { SearchComponent } from './search.component';
 import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-fdescribe('SearchComponent', () => {
+describe('SearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
 
