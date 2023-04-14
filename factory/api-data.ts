@@ -34,3 +34,30 @@ export const TICKET_FORM = {
     "updated": "2023-03-13T12:12:39.111Z",
     "id": 2
 }
+
+export const CATEGORIES = [
+    {
+        "id": 1,
+        "categoryName": "1R University"
+    },
+    {
+        "id": 2,
+        "categoryName": "Account"
+    },
+    {
+        "id": 3,
+        "categoryName": "Devops"
+    },
+    {
+        "id": 4,
+        "categoryName": "HR"
+    },
+    {
+        "id": 5,
+        "categoryName": "Infrastructure"
+    },
+    {
+        "id": 6,
+        "categoryName": "Office Administration"
+    }
+]

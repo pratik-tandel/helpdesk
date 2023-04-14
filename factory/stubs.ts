@@ -1,5 +1,5 @@
 import { of } from "rxjs"
-import { TICKETS } from "./api-data"
+import { CATEGORIES, TICKETS } from "./api-data"
 
 export const toastrStub = {
     success: () => { /** success **/ },
@@ -8,5 +8,13 @@ export const toastrStub = {
 
 export const ticketServiceStub = {
     getTickets: () => of(TICKETS),
-    deleteTicket: () => of(TICKETS[0])
+    getTicketById: () => of(TICKETS[0]),
+    addTicket: () => of(TICKETS[0]),
+    editTicket: () => of(TICKETS[0]),
+    deleteTicket: () => of(TICKETS[0]),
+    getCategories: () => of(CATEGORIES)
+}
+
+export const routerStub = {
+    navigateByUrl: () => { /** navigate by url */ }
 }
