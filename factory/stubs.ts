@@ -1,9 +1,15 @@
 import { of } from "rxjs"
-import { CATEGORIES, TICKETS, TICKET_FORM } from "./api-data"
+import { CATEGORIES, TICKETS, TICKET_FORM, USER_DETAILS } from "./api-data"
 
 export const toastrStub = {
     success: () => { /** success **/ },
     error: () => { /** error **/ }
+}
+
+export const authServiceStub = {
+    getUserDetails: (): string | null => JSON.stringify(USER_DETAILS),
+    setUserDetails: () => { /** set user details */ },
+    logoutUser: () =>{ /** logut user */ }
 }
 
 export const ticketServiceStub = {
@@ -16,7 +22,8 @@ export const ticketServiceStub = {
 }
 
 export const routerStub = {
-    navigateByUrl: () => { /** navigate by url */ }
+    navigateByUrl: () => { /** navigate by url */ },
+    navigate: () => { /** navigate */ }
 }
 
 export const TICKET_FORMGROUP = {
