@@ -1,5 +1,5 @@
 import { of } from "rxjs"
-import { CATEGORIES, EMPLOYEES, TICKETS, TICKET_FORM, USER_DETAILS } from "./api-data"
+import { CATEGORIES, EMPLOYEES, REGISTRATION_FORM, TICKETS, TICKET_FORM, USER_DETAILS } from "./api-data"
 
 export const toastrStub = {
     success: () => { /** success **/ },
@@ -9,7 +9,7 @@ export const toastrStub = {
 export const authServiceStub = {
     getUserDetails: (): string | null => JSON.stringify(USER_DETAILS),
     setUserDetails: () => { /** set user details */ },
-    logoutUser: () =>{ /** logut user */ }
+    logoutUser: () => { /** logut user */ }
 }
 
 export const ticketServiceStub = {
@@ -29,6 +29,11 @@ export const routerStub = {
 export const TICKET_FORMGROUP = {
     valid: true,
     value: TICKET_FORM
+}
+
+export const REGISTRATION_FORMGROUP = {
+    valid: true,
+    value: REGISTRATION_FORM
 }
 
 export const registrationServiceStub = {

@@ -35,6 +35,15 @@ export const TICKET_FORM = {
     id: 2
 }
 
+export const REGISTRATION_FORM = {
+    name: 'Pratik',
+    lastName: 'Tandel',
+    userName: 'pratiktandel@gmail.com',
+    password: 'Pass',
+    confirmPassword: 'Pass',
+    id: 3
+}
+
 export const CATEGORIES = [
     {
         id: 1,
