@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Category, Ticket } from './ticket.model';
 
 @Injectable()
 export class TicketService {
 
-  private url = 'http://localhost:3000/';
+  private url = environment.apiUrl;
 
   constructor(private _http: HttpClient) { }
 
@@ -15,7 +16,7 @@ export class TicketService {
    * @returns ticket list
    */
   getTickets(): Observable<Ticket[]> {
-    return this._http.get<Ticket[]>(`${this.url}tickets`);
+    return this._http.get<Ticket[]>(`${this.url}/tickets`);
   }
 
   /**
@@ -24,7 +25,7 @@ export class TicketService {
    * @returns ticket details
    */
   getTicketById(ticketId: string): Observable<Ticket> {
-    return this._http.get<Ticket>(`${this.url}tickets/${ticketId}`);
+    return this._http.get<Ticket>(`${this.url}/tickets/${ticketId}`);
   }
 
   /**
@@ -32,7 +33,7 @@ export class TicketService {
    * @param ticket ticket data
    */
   addTicket(ticket: Ticket) {
-    return this._http.post<Ticket>(`${this.url}tickets`, ticket);
+    return this._http.post<Ticket>(`${this.url}/tickets`, ticket);
   }
 
   /**
@@ -41,7 +42,7 @@ export class TicketService {
    * @param ticketId ticket id
    */
   editTicket(ticket: Ticket, ticketId: string) {
-    return this._http.put<Ticket>(`${this.url}tickets/${ticketId}`, ticket);
+    return this._http.put<Ticket>(`${this.url}/tickets/${ticketId}`, ticket);
   }
 
   /**
@@ -49,7 +50,7 @@ export class TicketService {
    * @param ticketId ticket id
    */
   deleteTicket(ticketId: number) {
-    return this._http.delete<Ticket>(`${this.url}tickets/${ticketId}`);
+    return this._http.delete<Ticket>(`${this.url}/tickets/${ticketId}`);
   }
 
   /**
@@ -57,6 +58,6 @@ export class TicketService {
    * @returns category list
    */
   getCategories(): Observable<Category[]> {
-    return this._http.get<Category[]>(`${this.url}categories`);
+    return this._http.get<Category[]>(`${this.url}/categories`);
   }
 }
