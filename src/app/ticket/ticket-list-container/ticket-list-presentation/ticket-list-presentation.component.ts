@@ -4,6 +4,7 @@ import jsPDF from 'jspdf';
 import * as XLSX from 'xlsx';
 import { Ticket } from '../../ticket.model';
 import { TicketListPresenterService } from '../ticket-list-presenter/ticket-list-presenter.service';
+import { exportToExcel, exportToPdf } from 'src/app/core/utility/export';
 
 @Component({
   selector: 'app-ticket-list-ui',
@@ -52,28 +53,19 @@ export class TicketListPresentationComponent {
   }
 
   /** export table to excel */
-  exportExcel(): void {
+  downloadExcel(): void {
     /* table id */
     let element = document.getElementById('ticket-table');
-    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
-    /* generate workbook and add the worksheet */
-    const wb: XLSX.WorkBook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Tickets');
-    /* save to file */
-    XLSX.writeFile(wb, `${this.fileName}.xls`);
+    if (element) {
+      exportToExcel(element, this.fileName);
+    }
   }
 
   /** export table to pdf */
-  public exportPdf(): void {
-    let DATA: any = document.getElementById('ticket-table');
-    html2canvas(DATA).then((canvas: any) => {
-      let fileWidth = 208;
-      let fileHeight = (canvas.height * fileWidth) / canvas.width;
-      const FILEURI = canvas.toDataURL('image/png');
-      let PDF = new jsPDF('p', 'mm', 'a4');
-      let position = 0;
-      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
-      PDF.save(`${this.fileName}.pdf`);
-    });
+  public downloadPdf(): void {
+    let element = document.getElementById('ticket-table');
+    if (element) {
+      exportToPdf(element, this.fileName);
+    }
   }
 }
