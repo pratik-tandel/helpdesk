@@ -56,16 +56,12 @@ export class TicketListPresentationComponent {
   downloadExcel(): void {
     /* table id */
     let element = document.getElementById('ticket-table');
-    if (element) {
-      exportToExcel(element, this.fileName);
-    }
+    element && exportToExcel(element, this.fileName);
   }
 
   /** export table to pdf */
   public downloadPdf(): void {
     let element = document.getElementById('ticket-table');
-    if (element) {
-      exportToPdf(element, this.fileName);
-    }
+    element && exportToPdf(element, this.fileName);
   }
 }
