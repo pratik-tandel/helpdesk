@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { EmployeeCredentials } from '../../login-model';
+import { EmployeeCredentials } from '../../login.model';
 import { LoginPresenterService } from '../login-presenter/login-presenter.service';
 
 @Component({

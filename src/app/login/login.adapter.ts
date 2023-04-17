@@ -1,5 +1,5 @@
 import { Employee } from "../core/model/common.model";
-import { RegisteredEmployee } from "./login-model";
+import { RegisteredEmployee } from "./login.model";
 
 export class LoginAdapter {
 

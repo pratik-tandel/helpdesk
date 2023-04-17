@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/internal/Subject';
-import { EmployeeCredentials } from '../../login-model';
+import { EmployeeCredentials } from '../../login.model';
 
 @Injectable()
 export class LoginPresenterService {

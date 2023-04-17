@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { EmployeeCredentials, RegisteredEmployee } from '../login-model';
+import { EmployeeCredentials, RegisteredEmployee } from '../login.model';
 import { LoginService } from '../login.service';
 @Component({
   selector: 'app-login-container',
