@@ -2,11 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import { TicketService } from "./ticket.service";
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
 import { TICKET_FORM } from 'factory/api-data';
+import { environment } from 'src/environments/environment';
 
 describe("TicketService", () => {
   let service: TicketService;
   let httpMock: HttpTestingController;
-  let url: string = 'http://localhost:3000/';
+  let url: string = environment.apiUrl;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -26,7 +27,7 @@ describe("TicketService", () => {
       expect(tickets).toBeTruthy();
     });
 
-    const req = httpMock.expectOne(`${url}tickets`);
+    const req = httpMock.expectOne(`${url}/tickets`);
     expect(req.request.method).toBe('GET');
   });
 
@@ -36,7 +37,7 @@ describe("TicketService", () => {
       expect(ticket).toBeTruthy();
     });
 
-    const req = httpMock.expectOne(`${url}tickets/${ticketId}`);
+    const req = httpMock.expectOne(`${url}/tickets/${ticketId}`);
     expect(req.request.method).toBe('GET');
   });
 
@@ -45,7 +46,7 @@ describe("TicketService", () => {
       expect(ticket).toBeTruthy();
     });
 
-    const req = httpMock.expectOne(`${url}tickets`);
+    const req = httpMock.expectOne(`${url}/tickets`);
     expect(req.request.method).toBe('POST');
   });
 
@@ -55,7 +56,7 @@ describe("TicketService", () => {
       expect(ticket).toBeTruthy();
     });
 
-    const req = httpMock.expectOne(`${url}tickets/${ticketId}`);
+    const req = httpMock.expectOne(`${url}/tickets/${ticketId}`);
     expect(req.request.method).toBe('PUT');
   });
 
@@ -65,7 +66,7 @@ describe("TicketService", () => {
       expect(ticket).toBeTruthy();
     });
 
-    const req = httpMock.expectOne(`${url}tickets/${ticketId}`);
+    const req = httpMock.expectOne(`${url}/tickets/${ticketId}`);
     expect(req.request.method).toBe('DELETE');
   });
 
@@ -74,7 +75,7 @@ describe("TicketService", () => {
       expect(categories).toBeTruthy();
     });
 
-    const req = httpMock.expectOne(`${url}categories`);
+    const req = httpMock.expectOne(`${url}/categories`);
     expect(req.request.method).toBe('GET');
   });
 });
