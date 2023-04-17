@@ -1,5 +1,5 @@
 import { of } from "rxjs"
-import { CATEGORIES, TICKETS, TICKET_FORM, USER_DETAILS } from "./api-data"
+import { CATEGORIES, EMPLOYEES, TICKETS, TICKET_FORM, USER_DETAILS } from "./api-data"
 
 export const toastrStub = {
     success: () => { /** success **/ },
@@ -29,4 +29,9 @@ export const routerStub = {
 export const TICKET_FORMGROUP = {
     valid: true,
     value: TICKET_FORM
+}
+
+export const registrationServiceStub = {
+    addEmployee: () => of(EMPLOYEES[0]),
+    getRegisteredEmployees: () => of(EMPLOYEES)
 }
