@@ -69,3 +69,22 @@ export const USER_DETAILS = {
     lastName: 'Tandel',
     id: 1
 }
+
+export const EMPLOYEES = [
+    {
+        name: 'tanvi',
+        lastName: 'patel',
+        userName: 'tanvi.patel@gmail.com',
+        password: '123',
+        confirmPassword: '123',
+        id: 1
+    },
+    {
+        name: 'Pratik',
+        lastName: 'Tandel',
+        userName: 'pratiktandel@gmail.com',
+        password: 'Pass',
+        confirmPassword: 'Pass',
+        id: 3
+    }
+]
