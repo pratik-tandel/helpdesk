@@ -5,7 +5,7 @@ import { Subject } from 'rxjs/internal/Subject';
 import { EmployeeCredentials } from '../../login.model';
 
 @Injectable()
-export class LoginPresenterService {
+export class LoginFormPresenterService {
   public loginFormData$: Observable<EmployeeCredentials>
   public loginFormData: Subject<EmployeeCredentials>
 

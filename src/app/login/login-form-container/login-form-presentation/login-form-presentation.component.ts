@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { EmployeeCredentials } from '../../login.model';
-import { LoginPresenterService } from '../login-presenter/login-presenter.service';
+import { LoginFormPresenterService } from '../login-form-presenter/login-form-presenter.service';
 
 @Component({
-  selector: 'app-login-ui',
-  templateUrl: './login-presentation.component.html',
-  viewProviders: [LoginPresenterService],
+  selector: 'app-login-form-ui',
+  templateUrl: './login-form-presentation.component.html',
+  viewProviders: [LoginFormPresenterService],
 })
-export class LoginPresentationComponent {
+export class LoginFormPresentationComponent {
   /** login employee event emitter */
   @Output() loginEmployee: EventEmitter<EmployeeCredentials>;
 
@@ -16,7 +16,7 @@ export class LoginPresentationComponent {
   public loginForm: FormGroup;
 
   constructor(
-    private _loginPresenterService: LoginPresenterService
+    private _loginPresenterService: LoginFormPresenterService
   ) {
     this.loginForm = this._loginPresenterService.bindform();
     this.loginEmployee = new EventEmitter();

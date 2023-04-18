@@ -5,10 +5,10 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { EmployeeCredentials, RegisteredEmployee } from '../login.model';
 import { LoginService } from '../login.service';
 @Component({
-  selector: 'app-login-container',
-  templateUrl: './login-container.component.html',
+  selector: 'app-login-form-container',
+  templateUrl: './login-form-container.component.html',
 })
-export class LoginContainerComponent {
+export class LoginFormContainerComponent {
 
   constructor(
     private _loginService: LoginService,

@@ -2,24 +2,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgSelectModule } from '@ng-select/ng-select';
-import { EMPLOYEES } from 'factory/api-data';
-import { authServiceStub, loginServiceStub, registrationServiceStub, routerStub, toastrStub } from 'factory/stubs';
+import { Router } from '@angular/router';
+import { loginServiceStub, routerStub, toastrStub } from 'factory/stubs';
 import { ToastrService } from 'ngx-toastr';
-import { LoginContainerComponent } from './login-container.component';
-import { LoginPresentationComponent } from './login-presentation/login-presentation.component';
 import { LoginService } from '../login.service';
+import { LoginFormContainerComponent } from './login-form-container.component';
+import { LoginFormPresentationComponent } from './login-form-presentation/login-form-presentation.component';
 
-describe('LoginContainerComponent', () => {
-  let component: LoginContainerComponent;
-  let fixture: ComponentFixture<LoginContainerComponent>;
+describe('LoginFormContainerComponent', () => {
+  let component: LoginFormContainerComponent;
+  let fixture: ComponentFixture<LoginFormContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        LoginContainerComponent,
-        LoginPresentationComponent
+        LoginFormContainerComponent,
+        LoginFormPresentationComponent
       ],
       imports: [
         ReactiveFormsModule
@@ -32,7 +30,7 @@ describe('LoginContainerComponent', () => {
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(LoginContainerComponent);
+    fixture = TestBed.createComponent(LoginFormContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -47,7 +45,7 @@ describe('LoginContainerComponent', () => {
       password: '123',
     };
     const errorSpy = spyOn(toastrStub, 'error');
-    fixture.debugElement.query(By.css('app-login-ui')).triggerEventHandler('loginEmployee', employeeCredentials);
+    fixture.debugElement.query(By.css('app-login-form-ui')).triggerEventHandler('loginEmployee', employeeCredentials);
     expect(errorSpy).toHaveBeenCalledTimes(1);
 
     const spy = spyOn(routerStub, 'navigate');
@@ -55,7 +53,7 @@ describe('LoginContainerComponent', () => {
       userName: 'pratiktandel@gmail.com',
       password: 'Pass',
     };
-    fixture.debugElement.query(By.css('app-login-ui')).triggerEventHandler('loginEmployee', employeeCredentials);
+    fixture.debugElement.query(By.css('app-login-form-ui')).triggerEventHandler('loginEmployee', employeeCredentials);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
