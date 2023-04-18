@@ -40,3 +40,7 @@ export const registrationServiceStub = {
     addEmployee: () => of(EMPLOYEES[0]),
     getRegisteredEmployees: () => of(EMPLOYEES)
 }
+
+export const loginServiceStub = {
+    getRegisteredEmployees: () => of(EMPLOYEES)
+}
