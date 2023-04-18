@@ -1,17 +1,17 @@
 {
   "employees": [
     {
-      "name": "tanvi",
-      "lastName": "patel",
-      "userName": "tanvi.patel@1rivet.com",
+      "name": "john",
+      "lastName": "smith",
+      "userName": "johnsmith@gmail.com",
       "password": "123",
       "confirmPassword": "123",
       "id": 1
     },
     {
-      "name": "binal",
-      "lastName": "lad",
-      "userName": "binallad@1rivet.com",
+      "name": "jane",
+      "lastName": "doe",
+      "userName": "janedoe@gmail.com",
       "password": "123",
       "confirmPassword": "123",
       "id": 2

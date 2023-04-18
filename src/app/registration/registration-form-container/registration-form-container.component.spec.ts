@@ -45,8 +45,8 @@ describe('RegistrationFormContainerComponent', () => {
 
     it('should register employee', () => {
         let employeeData = {
-            name: 'tanvi',
-            lastName: 'patel',
+            name: 'john',
+            lastName: 'smith',
             userName: 'test@gmail.com',
             password: '123',
             confirmPassword: '123',

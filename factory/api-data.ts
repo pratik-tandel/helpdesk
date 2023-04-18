@@ -44,6 +44,11 @@ export const REGISTRATION_FORM = {
     id: 3
 }
 
+export const LOGIN_FORM = {
+    userName: 'pratiktandel@gmail.com',
+    password: 'Pass'
+}
+
 export const CATEGORIES = [
     {
         id: 1,
@@ -81,9 +86,9 @@ export const USER_DETAILS = {
 
 export const EMPLOYEES = [
     {
-        name: 'tanvi',
-        lastName: 'patel',
-        userName: 'tanvi.patel@gmail.com',
+        name: 'john',
+        lastName: 'smith',
+        userName: 'john.smith@gmail.com',
         password: '123',
         confirmPassword: '123',
         id: 1
