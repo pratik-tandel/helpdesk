@@ -1,16 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { TICKET_FORM } from 'factory/api-data';
 import { routerStub, ticketServiceStub, toastrStub } from 'factory/stubs';
 import { ToastrService } from 'ngx-toastr';
 import { TicketService } from '../ticket.service';
 import { TicketFormContainerComponent } from './ticket-form-container.component';
 import { TicketFormPresentationComponent } from './ticket-form-presentation/ticket-form-presentation.component';
-import { TICKET_FORM } from 'factory/api-data';
-import { ActivatedRoute, Router } from '@angular/router';
-import { NgSelectModule } from '@ng-select/ng-select';
 
 describe('TicketFormContainerComponent', () => {
   let component: TicketFormContainerComponent;
@@ -36,6 +35,7 @@ describe('TicketFormContainerComponent', () => {
         NgSelectModule
       ],
       providers: [
+        // ActivatedRoute,
         { provide: TicketService, useValue: ticketServiceStub },
         { provide: ToastrService, useValue: toastrStub },
         { provide: ActivatedRoute, useValue: activatedRouteStub },
