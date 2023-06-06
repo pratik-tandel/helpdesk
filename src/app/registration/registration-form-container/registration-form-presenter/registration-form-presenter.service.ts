@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
-import { Employee } from 'src/app/core/model/common.model';
+import { Employee } from 'src/app/core/models/common.model';
 import { CustomFormValidator } from '../../custom-validation';
 
 @Injectable()

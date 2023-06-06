@@ -36,7 +36,7 @@ export class TicketFormPresenterService {
 
   /**
    * check if form is valid
-   * @param ticketForm 
+   * @param ticketForm
    */
   onSubmit(ticketForm: FormGroup) {
     if (!ticketForm.valid) {

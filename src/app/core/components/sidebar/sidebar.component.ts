@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { SidebarMenu } from '../../model/common.model';
+import { SidebarMenu } from '../../models/common.model';
 
 
 @Component({
@@ -26,26 +26,26 @@ export class SidebarComponent {
         link: 'tickets',
         className: 'active'
       },
-      {
-        text: 'New',
-        link: '',
-        className: 'active'
-      },
-      {
-        text: 'Pending',
-        link: '',
-        className: 'active'
-      },
-      {
-        text: 'In Progress',
-        link: '',
-        className: 'active'
-      },
-      {
-        text: 'closed',
-        link: '',
-        className: 'active'
-      },
+      // {
+      //   text: 'New',
+      //   link: '',
+      //   className: 'active'
+      // },
+      // {
+      //   text: 'Pending',
+      //   link: '',
+      //   className: 'active'
+      // },
+      // {
+      //   text: 'In Progress',
+      //   link: '',
+      //   className: 'active'
+      // },
+      // {
+      //   text: 'closed',
+      //   link: '',
+      //   className: 'active'
+      // }
     ]
   }
 

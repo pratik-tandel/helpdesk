@@ -12,7 +12,7 @@ export class CustomFormValidator {
     /** check if password and confirm password are same */
     static checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
         return (group: FormGroup) => {
-
+            
             let passwordInput = group.controls[passwordKey],
                 passwordConfirmationInput = group.controls[passwordConfirmationKey];
             if (passwordInput.value !== passwordConfirmationInput.value) {

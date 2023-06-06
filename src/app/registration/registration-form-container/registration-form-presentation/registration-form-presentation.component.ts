@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { Employee } from 'src/app/core/model/common.model';
+import { Employee } from 'src/app/core/models/common.model';
 import { RegistrationFormPresenterService } from "../registration-form-presenter/registration-form-presenter.service";
 
 

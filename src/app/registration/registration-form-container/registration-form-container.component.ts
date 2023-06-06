@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { Employee } from 'src/app/core/model/common.model';
+import { Employee } from 'src/app/core/models/common.model';
 import { RegistrationService } from '../registration.service';
 @Component({
   selector: 'app-registration-form-container',
